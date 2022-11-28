@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="logo">DEVZILLA</h1>
+
+            <nav class="row btns_menu">
+                
+                <input type="checkbox" id="menu" />
+                <div class="hamburguer">
+
+                    <button class="btn btn_menu">
+                        <!-- não tem como estilizar um botao só quando ele ta pressionado ou nao no css puro, o checkbox 
+                        é uma "gambiarra" que permite estilizar mostrando o menu se estiver clicado e escondendo se não tiver -->
+
+                        <label for="menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </button>
+
+                </div>
+
+                <ul>
+                    <li><a href="index.html">início</a></li>
+                    <li><a href="#">alugar</a></li>
+                    <li><a href="index.html/#sobre">sobre</a></li>
+                    <li><a href="index.html/#contato">contato</a></li>
+                    <li><a href="historico.html">histórico de viagens</a></li>
+                </ul>
+            </nav>
+
+            <section>
+                <h3>Bem vindo!</h3>
+                <p>ainda não possui conta? <a href="login.html">entre</a> ou <a href="cadastro.html">cadastre-se</a></p>
+            </section>
+        </header>
+
+        <main>
+            <section id="banner">
+                <div id="bg_banner">
+                    <h1>Procurando um meio de transporte prático, confortável e sustentável?
+                        Crie uma conta e alugue um de nossos carros elétricos!</h1>
+
+                    <a href="cadastro.html" class="btn btn_border">CRIAR UMA CONTA</a>
+                </div>
+                <div id="mask_banner"></div>
+            </section>
+        </main>
+    </body>
+</html>

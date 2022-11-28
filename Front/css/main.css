@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope:300,400,500i,600,700,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kanit:300,400,500i,600,700,800,900,900i&display=swap');
+
+body{
+    background: #3B3D45;
+    margin: 0;
+    font-family: 'Manrope';
+    color: #F2F2F2;
+}
+
+h1, h2, h3{
+    font-family: 'Kanit';
+}
+
+#bg_banner{
+    background-image: url('../img/banner.png') ;
+    min-height: 700px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#banner{
+    position: relative;
+}
+
+#mask_banner{
+    height: 100%;
+    position: absolute;
+    background: rgba(63, 61, 86, 0.55);
+    width: 100%;
+    top: 0;
+}
+
+#bg_banner *{
+    z-index: 3;
+}
+
+#bg_banner h1{
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.445);
+    font-size: 48px;
+    line-height: 75px;
+    text-align: center;
+    padding: 4em 6em;
+}

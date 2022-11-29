@@ -34,6 +34,7 @@ header section{
 
 header section a{
     color: #5465FF;
+    text-decoration: none;
 }
 
 header section h3{

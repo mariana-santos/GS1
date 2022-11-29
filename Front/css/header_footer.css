@@ -48,6 +48,7 @@ header section h3{
 .row{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 header ul, footer ul{
@@ -68,7 +69,7 @@ header ul li a, footer ul li a{
 ul li a:not(.active):hover{ font-weight: 600; }
 
 /* esse item é o "risquinho" que fica depois do link quando passa o mouse em cima */
-header ul li a::before, footer ul li a::before {
+header ul li a::before{
     content: "";
     position: absolute;
     display: block;
@@ -153,19 +154,19 @@ header .btn{
 }
 
 footer{
-    background: #005BAA;
-    color: #fff;
-    /* margin-top: 3rem; */
+    background: #3B3D45;
+    color: #fff !important;
+    text-align: center;
 }
 
 /* main{ padding-top: 250px; } */
 
-footer ul li a, footer h2{ color: #fff; }
+footer a, footer h2{ color: #fff; }
 
 footer .row{
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    gap: 35px;
+    gap:20px;
 }
 
 .social_media{ gap: 15px; }

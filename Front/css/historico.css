@@ -1,0 +1,134 @@
+.historico *{
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.historico{
+    padding-top: 172px;
+}
+.menu_lateral{
+    position: fixed;
+    width: 224px;
+    padding-top: 32px;
+    left: calc((100vw - 1280px) / 2);
+}
+.menu_lateral ul{
+    display: block;
+    flex-direction: column;
+    justify-content:flex-start;
+    padding: 0;
+}
+.menu_lateral ul li{
+    padding: 1em 2em;
+    box-sizing: border-box;
+    border-left: 4px solid #3B3D45;
+    color: #fff;
+    cursor: pointer;
+    padding: 12px 12px 12px calc(24px);
+}
+.menu_lateral ul .ativo{
+    background-color: #696969;
+    border-left: 4px solid #5465FF;
+}
+
+.opcao_alugar{
+    display: block;
+    right: calc((100vw - 1280px) / 2);
+    position: fixed;
+    width: 275px;
+    padding-top: 32px;
+}
+.opcao_alugar > h3, .lista_historico div > h3{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 22px;
+}
+.opcao_alugar > p{
+    color: #CACACA;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    padding: 1em 0;
+}
+.opcao_alugar > button{
+    border-style: none;
+    transition-property: background;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 1, 1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: rgb(255, 255, 255);
+    background-color: #5465FF;
+}
+.opcao_alugar > button:hover{
+    background-color: #5465ff98;
+}
+.lista_historico{
+    padding-left: calc((100vw - 1280px) / 2 + 224px);
+    padding-right: calc((100vw - 1280px) / 2 + 275px);
+    max-height: calc(100vh - 56px);
+    padding-top: 32px;
+}
+.lista_historico > div{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+}
+.botoes_meses{
+    padding: 20px 0;
+}
+.lista_historico div > button{
+    transition-property: background;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 1, 1);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    border-radius: 30px;
+    padding: 10px 12px;
+    color: #5465FF;
+    background-color: #fff;
+    border: none;
+    margin: 0px 5px;
+}
+.lista_historico div > .btn_select{
+    color: #fff;
+    background-color: #5465FF;
+}
+.todos_blocos{
+    flex-direction: column;
+    padding-bottom: 10vh;
+}
+.bloco_historico{
+    width: 100%;
+    border: 2px solid #989898;
+    border-radius: 12px;
+    margin-top: 15px;
+    padding: 15px;
+}
+.header_bloco{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #CACACA;
+    padding-bottom: 15px;
+}
+.conteudo_bloco > h5{
+    font-size: 1.3em;
+    font-weight: 100;
+}
+.footer_bloco{
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}

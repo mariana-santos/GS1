@@ -1,0 +1,97 @@
+.perfil_usuario *{
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.perfil_usuario{
+    padding-left: calc((100vw - 1280px) / 2 + 224px);
+    padding-right: calc((100vw - 1280px) / 2 + 275px);
+    padding-top: 32px;
+    padding-bottom: 10vh;
+}
+.perfil_usuario > div{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+}
+.header_perfil{
+    display: flex;
+}
+.header_perfil img{
+    width: 80px;
+}
+.header_perfil > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 30px;
+}
+.header_perfil > div > h4{
+    font-size: 1.5em;
+}
+.header_perfil > div > p{
+    font-size: 1.2em;
+}
+.perfil_usuario form{
+    margin-top: 2vh;
+}
+.perfil_usuario form label{
+    font-size: 1em;
+    padding: 15px 0 10px 0;
+}
+.perfil_usuario form input, .perfil_usuario form select{
+    width: 80%;
+    height: 4vh;
+    background-color: #3B3D45;
+    border: 2px solid #EEEEEE;
+    border-radius: 8px;
+    color: #EEEEEE;
+    padding: 0.5em 1em;
+}
+.perfil_usuario form input::placeholder{
+    color: #bbbbbb;
+}
+.infos_CNH{
+    margin-top: 4vh;
+}
+.infos_CNH h4{
+    font-size: 1.4em;
+}
+.infos_CNH h5{
+    font-size: 1em;
+    font-weight: 100;
+    padding-top: 10px;
+}
+.infos_CNH p{
+    font-size: 1em;
+    font-weight: 100;
+    padding-top: 3px;
+}
+.botoes_perfil{
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+}
+.botoes_perfil button{
+    font-size: 1em;
+    padding: 10px 15px;
+    width: fit-content;
+    background-color: #EEEEEE;
+    border: none;
+    border-radius: 8px;
+}
+.btn_salvar{
+    color: #00a015;
+}
+.btn_encerrar{
+    color: rgb(201, 0, 0);
+    margin-top: 2vh;
+    cursor: pointer;
+}
+.disabled{
+    color: #636363;
+    cursor: not-allowed;
+}

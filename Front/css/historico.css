@@ -40,10 +40,9 @@
     padding-top: 32px;
 }
 .opcao_alugar > h3, .lista_historico div > h3{
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 1.8em;
     line-height: 28px;
-    margin-top: 22px;
 }
 .opcao_alugar > p{
     color: #CACACA;
@@ -73,7 +72,6 @@
 .lista_historico{
     padding-left: calc((100vw - 1280px) / 2 + 224px);
     padding-right: calc((100vw - 1280px) / 2 + 275px);
-    max-height: calc(100vh - 56px);
     padding-top: 32px;
 }
 .lista_historico > div{
@@ -131,4 +129,18 @@
     padding-top: 20px;
     display: flex;
     justify-content: flex-end;
+}
+@media screen and (max-width: 1300px){
+    .opcao_alugar {
+        display: none;
+    }
+    .classe_historico{
+        padding: 0;
+        padding-left: 224px;
+        padding-top: 32px;
+    }
+    .menu_lateral{
+        left: 0;
+        display: block;
+    }
 }

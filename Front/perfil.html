@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/historico.css">
+    <link rel="stylesheet" type="text/css" href="css/perfil.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">DEVZILLA</h1>
+
+        <nav class="row btns_menu">
+
+            <input type="checkbox" id="menu" />
+            <div class="hamburguer">
+
+                <button class="btn btn_menu">
+                    <!-- não tem como estilizar um botao só quando ele ta pressionado ou nao no css puro, o checkbox 
+                        é uma "gambiarra" que permite estilizar mostrando o menu se estiver clicado e escondendo se não tiver -->
+
+                    <label for="menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </button>
+
+            </div>
+
+            <ul>
+                <li><a href="index.html">início</a></li>
+                <li><a href="#">alugar</a></li>
+                <li><a href="index.html#sobre">sobre</a></li>
+                <li><a href="index.html#contato">contato</a></li>
+                <li><a href="historico.html">histórico de viagens</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h3>Bem vindo!</h3>
+            <p>Ainda não possui conta? <a href="login.html">Entre</a> ou <a href="cadastro.html">Cadastre-se</a></p>
+        </section>
+    </header>
+
+    <main class="historico">
+        <section class="classe_historico">
+            <article class="menu_lateral">
+                <nav>
+                    <ul>
+                        <li><a href="#">Alugar agora</a></li>
+                        <li><a href="./historico.html">As suas viagens</a></li>
+                        <li class="ativo"><a href="./perfil.html">Definições do perfil</a></li>
+                    </ul>
+                </nav>
+            </article>
+            <article class="opcao_alugar">
+                <h3>Consiga um carro em poucos minutos</h3>
+                <p>Reserve um carro a partir de um browser. Não é necessário instalar a aplicação.</p>
+                <button>Alugar um carro</button>
+            </article>
+            <article class="perfil_usuario">
+                <div>
+                    <div class="header_perfil">
+                        <img src="./img/img_perfil.svg" alt="">
+                        <div>
+                            <h4>Nome completo</h4>
+                            <p>+55 11 91223-1234</p>
+                        </div>
+                    </div>
+                    <form method="POST">
+                        <div>
+                            <label for="">Localização</label>
+                            <select name="" id="">
+                                <option value="Brasil">Brasil</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="">Email</label>
+                            <input type="email" placeholder="email@gmail.com">
+                        </div>
+                        <div>
+                            <label for="">Data de Nascimento</label>
+                            <input type="date">
+                        </div>
+                    </form>
+                    <div class="infos_CNH">
+                        <h4>CNH</h4>
+                        <div>
+                            <h5>Número de Registro</h5>
+                            <p>00110010</p>
+                        </div>
+                        <div>
+                            <h5>Validade</h5>
+                            <p>01/01/2024</p>
+                        </div>
+                        <div>
+                            <h5>Categoria</h5>
+                            <p>A e B</p>
+                        </div>
+                    </div>
+                    <div class="botoes_perfil">
+                        <button class="btn_salvar disabled" disabled>Guardar alterações</button>
+                        <button class="btn_encerrar">Encerrar sessão</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+
+    <footer style="background-color: #5465FF;">
+        <div class="row">
+            <h2>Fale conosco:</h2>
+            <ul class="social_media">
+                <li><a href="#"><img src="img/icons/icon_fb.svg"></a></li>
+                <li><a href="https://www.youtube.com/channel/UC4sgDWUic84nLQgW5AKZtiw" target="_blank"><img
+                            src="img/icons/icon_yt.svg"></a></li>
+                <li><a href="#"><img src="img/icons/icon_linkedin.svg"></a></li>
+            </ul>
+        </div>
+
+        <p>DevZilla | Todos os direitos reservados<sup>©</sup></p>
+        <a href="mailto:devzillacompany@gmail.com">devzillacompany@gmail.com</a>
+    </footer>
+</body>
+
+</html>

@@ -60,6 +60,7 @@ h1, h2, h3{
     display: inline-block;
     margin: auto;
     padding: 5px 40px;
+    text-transform: uppercase;
 }
 
 .btn, a{
@@ -69,6 +70,22 @@ h1, h2, h3{
 .btn_border{
     color: #f2f2f2;
     border: solid 2px #f2f2f2;
+    background: transparent;
+}
+
+.border_black{
+    border: solid 3px #3B3D45;
+    color: #3B3D45;
+}
+
+.btn_purple{
+    background-color: #5465FF;
+    color: #f2f2f2;
+    border-style: none;
+}
+
+#aluguel .btn_purple{
+    font-size: 1em;
 }
 
 #banner .btn{
@@ -79,6 +96,12 @@ h1, h2, h3{
     background: #f2f2f2;
     color: #000;
     color: rgba(0, 0, 0, 0.5);
+}
+
+.border_black:hover{
+    background: #3B3D45;
+    color: #F2F2F2;
+    opacity: 1;
 }
 
 #banner .btn{
@@ -190,7 +213,7 @@ input, textarea{
 }
 
 #aluguel img{
-    margin: 4em 0;
+    margin: 2em 0;
 }
 
 #contato {
@@ -221,11 +244,11 @@ label{
 .btn_black{
     background: #3B3D45;
     color: #F2F2F2;
-    border: solid 4px #3B3D45;
+    border: solid 3px #3B3D45;
 }
 
 .btn_black:hover{
-    border: solid 4px #3B3D45;
+    border: solid 3px #3B3D45;
     background: #f2f2f2;
     color: #3B3D45;
 }

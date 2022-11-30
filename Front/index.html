@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/header_footer.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/modal.css">
         <title>Document</title>
     </head>
     <body>
@@ -45,6 +46,83 @@
             </section>
         </header>
 
+        <div id="fade" class="hide"></div>
+        <modal id="modal" class="hide">
+            <section class="container">
+
+                <section id="header">
+                    <div></div>
+                    <h1 id="title">Alugar carro elétrico</h1>
+                    <button class="close-modal">
+                        <div></div>
+                        <div></div>
+                    </button>
+                </section>
+
+                <section id="content">
+                    <div id="andamento">
+                        <h2 class="done">Confirmar carro</h2>
+                        <h2>Informações adicionais</h2>
+                        <h2>Pagamento</h2>
+                        <h2>Retirar veículo</h2>
+                    </div>
+
+                    <div id="confirmar_carro">
+                        <h2>Carro selecionado:</h2>
+
+                        <div class="wrap_img">
+                            <img src="img/car.png" id="carro_selecionado">
+                        </div>
+
+                        <div class="wrap_info border">
+                            <div>
+                                <img src="img/icons/car.svg">
+                                <p><strong>modelo:</strong> audi e-tron sportback</p>
+                            </div>
+
+                            <div>
+                                <img src="img/icons/battery.svg">
+                                <p><strong>duração da bateria:</strong> 60h</p>
+                            </div>
+
+                            <div>
+                                <img src="img/icons/sign.svg">
+                                <p><strong>placa:</strong> AAA123</p>
+                            </div>
+                        </div>
+
+                        <div class="wrap_info">
+                            <div>
+                                <img src="img/icons/calendar.svg">
+                                <p><strong>km rodados:</strong> 2988km</p>
+                            </div>
+
+                            <div>
+                                <img src="img/icons/distance.svg">
+                                <p><strong>distância de mim:</strong> 450m</p>
+                            </div>
+
+                            <div>
+                                <span class="cor_icon"></span>
+                                <p><strong>cor:</strong> roxo</p>
+                            </div>
+                        </div>
+
+                        <div class="endereco">
+                            <img src="img/icons/location.svg">
+                            <p><strong>Endereço de encontro:</strong> Av. Paulista, 1106  <span>(a 450m de distância)</span></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="footer">
+                    <button class="btn btn_border border_black close-modal">ESCOLHER OUTRO ENDEREÇO</button>
+                    <button class="btn btn_black" id="confirmar_carro">CONTINUAR</button>
+                </section>
+                
+            </section>
+        </modal>
+
         <main>
             <section id="banner">
                 <div id="bg_banner">
@@ -60,7 +138,7 @@
                 <div class="row">
                     <div class="column">
                         <img src="img/ill_car.svg">
-                        <a href="#" class="btn btn_border">ALUGAR AGORA</a>
+                        <a href="#aluguel" class="btn btn_border">ALUGAR AGORA</a>
                     </div>
 
                     <div class="column">
@@ -103,8 +181,9 @@
 
                 <p>Para começar, confirme seu endereço e selecione um carro disponível perto de você:</p>
                 <input type="text" value="Av. Paulista, 1106." placeholder="Digite um endereço de origem">
+                <button class="btn btn_purple open-modal">Confirmar</button>
 
-                <img src="img/mapa1.png">
+                <img src="img/mapa1.png" class="open-modal">
             </section>
 
             <section id="contato" class="container">
@@ -140,5 +219,7 @@
             <a href="mailto:devzillacompany@gmail.com">devzillacompany@gmail.com</a>
 
         </footer>
+
+        <script src="js/script.js"></script>
     </body>
 </html>

@@ -37,6 +37,7 @@ h1, h2, h3{
     background: rgba(63, 61, 86, 0.55);
     width: 100%;
     top: 0;
+    box-shadow: inset 0px -26px 26px -10px #3b3d45;
 }
 
 #bg_banner *{
@@ -44,7 +45,8 @@ h1, h2, h3{
 }
 
 #bg_banner h1{
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.445);
+    /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.445); */
+    text-shadow: 0px 7px 30px  rgba(0,0,0,0.75);
     font-size: 48px;
     line-height: 75px;
     text-align: center;

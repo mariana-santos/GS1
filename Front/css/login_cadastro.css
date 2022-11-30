@@ -132,3 +132,29 @@ label{
 }
 
 .arrow::after{ background: url('../img/icons/icon_arrow_right.svg') center / contain; }
+
+@media screen and (max-width: 1400px) {
+    .wrap_form .img_login{
+        display: none;
+    }
+    .wrap_form img{
+        display: none;
+    }
+    .wrap_form{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 1120px) {
+    .container_form{
+        padding-top: 15vh;
+    }
+}
+@media screen and (max-width: 992px) {
+    .container_form{
+        padding-top: 28vh;
+    }
+    .wrap_form form {
+        width: 75%;
+        margin: 2rem;
+    }
+}

@@ -1,0 +1,134 @@
+.container_form{
+    /* width: 100%; */
+    /* height: 100vh; */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 12vh;
+}
+
+.wrap_form{
+    /* height: 80vh; */
+    width: 65vw;
+    display: flex;
+    justify-content: space-between;
+    background: #5465FF;
+    border: 1px solid #5465FF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.wrap_form img{
+    width: 44%;
+    height: auto;
+    object-position: top left;
+    object-fit: cover;
+}
+
+.wrap_form .img_login{
+    width: auto;
+}
+
+.wrap_form form{
+    width: 50%;
+    text-align: center;
+    margin: 3rem;
+}
+
+h2{ 
+    font-size: 35px;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.wrap_form small::after{
+    width: 130px;
+    content: '';
+    background: linear-gradient(90deg, #AD7449 -9.09%, #D18B57 109.44%);
+    display: block;
+    height: 3px;
+    margin: 10px auto;
+}
+
+form img{
+    max-width: 100px;
+    max-height: 100px;
+    margin: 1rem 0;
+}
+
+input{
+    border-style: none !important;
+    width: 85%;
+    box-sizing: border-box;
+    padding: 2px 0 !important;
+}
+ 
+.wrap_input img{
+    display: inline-block;
+    width: 5%;
+    margin: 0 15px;
+    height: fit-content;
+}
+
+label{
+    display: block;
+    text-align: initial;
+    font-size: .8rem;
+    margin-bottom: .5rem;
+    margin-top: 1rem;
+}
+
+.wrap_input{
+    border: solid 1px #777;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+}
+
+.btn{
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.outros_links{
+    margin-top: 1rem;
+    display: block;
+    text-align: end;
+    color: #333;
+}
+
+.outros_links strong{
+    color: #AD7449;
+    text-decoration: none;
+}
+.btn{
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    display: flex;
+    width: fit-content;
+    gap: 15px;
+    align-items: center;
+    margin-top: 25px;
+    border: none;
+    font-weight: 300;
+    width: 100%;
+}
+
+.btn_primary{
+    background: #3B3D45;
+    color: #fff;
+}
+
+.btn_primary::after, .arrow::after{
+    content: '';  
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-position: center;
+}
+
+.arrow::after{ background: url('../img/icons/icon_arrow_right.svg') center / contain; }

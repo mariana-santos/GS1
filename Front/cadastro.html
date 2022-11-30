@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/historico.css">
+    <link rel="stylesheet" type="text/css" href="css/login_cadastro.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">DEVZILLA</h1>
+
+        <nav class="row btns_menu">
+
+            <input type="checkbox" id="menu" />
+            <div class="hamburguer">
+
+                <button class="btn btn_menu">
+                    <!-- não tem como estilizar um botao só quando ele ta pressionado ou nao no css puro, o checkbox 
+                        é uma "gambiarra" que permite estilizar mostrando o menu se estiver clicado e escondendo se não tiver -->
+
+                    <label for="menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </button>
+
+            </div>
+
+            <ul>
+                <li><a href="index.html">início</a></li>
+                <li><a href="#">alugar</a></li>
+                <li><a href="index.html#sobre">sobre</a></li>
+                <li><a href="index.html#contato">contato</a></li>
+                <li><a href="historico.html">histórico de viagens</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h3 class="bemvindo_h3">Bem vindo!</h3>
+            <p>Ainda não possui conta? <a href="login.html">Entre</a> ou <a href="cadastro.html">Cadastre-se</a></p>
+        </section>
+    </header>
+
+    <main class="login">
+        <section class="container container_form">
+            <div class="wrap_form">
+                <img src="./img/background_login.svg">
+                <form>
+                    <h2>Seja bem vindo!</h2>
+                    <small>Para continuar, por favor insira seus dados.</small>
+
+                    <img src="./img/cadastro_img.svg">
+
+                    <label for="nome">Nome</label>
+                    <div class="wrap_input">
+                        <img src="./img/icons/icon_envelope.svg">
+                        <input type="text" placeholder="Arthur" id="nome">
+                    </div>
+
+                    <label for="email">Email</label>
+                    <div class="wrap_input">
+                        <img src="./img/icons/icon_envelope.svg">
+                        <input type="email" placeholder="arthur@gmail.com" id="email">
+                    </div>
+
+                    <label for="dtNasc">Data de Nascimento</label>
+                    <div class="wrap_input">
+                        <img src="./img/icons/icon_calendar.svg">
+                        <input type="date" placeholder="21/12/2003" id="dtNasc">
+                    </div>
+
+                    <label for="regisCNH">Registro CNH</label>
+                    <div class="wrap_input">
+                        <img src="./img/icons/icon_driverliscence.svg">
+                        <input type="text" placeholder="0100111" id="regisCNH">
+                    </div>
+
+                    <label for="validCNH">Validade CNH</label>
+                    <div class="wrap_input">
+                        <img src="./img/icons/icon_calendar.svg">
+                        <input type="date" placeholder="01/01/2024" id="validCNH">
+                    </div>
+
+                    <label for="uploadCNH">Upload CNH</label>
+                    <div class="wrap_input">
+                        <img src="./img/icons/icon_envelope.svg">
+                        <input type="file" placeholder="01/01/2024" id="uploadCNH">
+                    </div>
+                    
+                    <label for="senha">Senha</label>
+                    <div class="wrap_input">
+                        <img src="./img/icons/icon_lock.svg"">
+                        <input type="password" placeholder="Digite sua senha" id="senha">
+                    </div>
+                    
+                    <label for="Confirmsenha">Confirme a senha</label>
+                    <div class="wrap_input">
+                        <img src="./img/icons/icon_lock.svg"">
+                        <input type="password" placeholder="Confirme sua senha" id="Confirmsenha">
+                    </div>
+
+                    <a href="#" class="btn btn_primary arrow">Entrar</a>
+
+                    <a class="outros_links" href="#">Esqueceu a senha? <strong>clique aqui</strong></a>
+                    <a class="outros_links" href="login.html">Já possui conta? <strong>clique aqui</strong></a>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <footer style="background-color: #5465FF;">
+        <div class="row">
+            <h2>Fale conosco:</h2>
+            <ul class="social_media">
+                <li><a href="#"><img src="img/icons/icon_fb.svg"></a></li>
+                <li><a href="https://www.youtube.com/channel/UC4sgDWUic84nLQgW5AKZtiw" target="_blank"><img
+                            src="img/icons/icon_yt.svg"></a></li>
+                <li><a href="#"><img src="img/icons/icon_linkedin.svg"></a></li>
+            </ul>
+        </div>
+
+        <p>DevZilla | Todos os direitos reservados<sup>©</sup></p>
+        <a href="mailto:devzillacompany@gmail.com">devzillacompany@gmail.com</a>
+    </footer>
+    <script>
+        document.querySelector(".bemvindo_h3").style.display = "none";
+        document.querySelector("header").style.padding = "0 4em";
+        document.querySelector(".logo").style.margin = "0";
+    </script>
+</body>
+
+</html>

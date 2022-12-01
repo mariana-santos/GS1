@@ -95,3 +95,8 @@
     color: #636363;
     cursor: not-allowed;
 }
+@media screen and (max-width: 766px) {
+    .perfil_usuario form input, .perfil_usuario form select{
+        width: 100%;
+    }
+}

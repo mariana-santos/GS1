@@ -144,3 +144,17 @@
         display: block;
     }
 }
+@media screen and (max-width: 992px) {
+    .classe_historico{
+        padding-top: 130px;
+    }
+}
+@media screen and (max-width: 766px) {
+    .menu_lateral{
+        display: none;
+    }
+    .classe_historico{
+        padding-left: 0;
+        padding-top: 100px;
+    }
+}

@@ -329,7 +329,7 @@
     align-items: center;
     gap: 2em;
     width: 100%;
-    margin: 2em 0;
+    margin: 1em 0;
 }
 
 .option{
@@ -374,7 +374,7 @@
 
 .option img{
     max-width: 100%;
-    width: 70px;
+    width: 50px;
 }
 
 .wrap_cartao .btn{

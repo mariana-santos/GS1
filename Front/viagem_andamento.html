@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/historico.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">DEVZILLA</h1>
+
+        <nav class="row btns_menu">
+
+            <input type="checkbox" id="menu" />
+            <div class="hamburguer">
+
+                <button class="btn btn_menu">
+                    <!-- não tem como estilizar um botao só quando ele ta pressionado ou nao no css puro, o checkbox 
+                        é uma "gambiarra" que permite estilizar mostrando o menu se estiver clicado e escondendo se não tiver -->
+
+                    <label for="menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                </button>
+
+            </div>
+
+            <ul>
+                <li><a href="index.html">início</a></li>
+                <li><a href="index.html#aluguel">alugar</a></li>
+                <li><a href="index.html#sobre">sobre</a></li>
+                <li><a href="index.html#contato">contato</a></li>
+                <li><a href="historico.html">histórico de viagens</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <h3 class="bemvindo_h3">Bem vindo!</h3>
+            <p>Ainda não possui conta? <a href="login.html">Entre</a> ou <a href="cadastro.html">Cadastre-se</a></p>
+        </section>
+    </header>
+
+    <main class="historico">
+        <section class="classe_historico">
+            <article class="menu_lateral">
+                <nav>
+                    <ul>
+                        <li><a href="index.html#aluguel">Alugar agora</a></li>
+                        <li class="ativo"><a href="#">Viagem em andamento</a></li>
+                        <li><a href="./historico.html">As suas viagens</a></li>
+                        <li><a href="./perfil.html">Definições do perfil</a></li>
+                    </ul>
+                </nav>
+            </article>
+            <article class="opcao_alugar">
+                <h3>Consiga um carro em poucos minutos</h3>
+                <p>Reserve um carro a partir de um browser. Não é necessário instalar a aplicação.</p>
+                <button>Alugar um carro</button>
+            </article>
+            <article class="lista_historico">
+                <div>
+                    <div>
+                        <h3>As suas viagens</h3>
+                        <div class="botoes_meses">
+                            <button class="btn_select">Todas as viagens</button>
+                            <button>novembro</button>
+                            <button>outubro</button>
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Viagens anteriores</h4>
+                        <div class="todos_blocos">
+
+                            <div class="bloco_historico">
+                                <div class="conteudo_bloco">
+                                    <div class="header_bloco">
+                                        <p>Carro X</p>
+                                        <p>novembro 1 2022, 16:06</p>
+                                    </div>
+                                    <h5>Rua Major Paladino, 55 - Vila Leopoldina - São Paulo - SP, 05307-000</h5>
+                                    <div class="bloco_baixo">
+                                        <div class="principal_bloco">
+                                            <div class="origem_bloco">
+                                                <div class="fig_cima">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <p>Avenida das Nações Unidas & Rua Tenente João Salustiano Lira - Vila
+                                                    Leopoldina - São Paulo - SP, 05307</p>
+                                            </div>
+                                            <div class="destino_bloco">
+                                                <div class="fig_baixo">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <p>Rua Major Paladino, 55 - Vila Leopoldina - São Paulo - SP, 05307-000
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="footer_bloco">
+                                            <button>Ajuda</button>
+                                            <button>Ver detalhes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bloco_historico">
+                                <div class="conteudo_bloco">
+                                    <div class="header_bloco">
+                                        <p>Carro X</p>
+                                        <p>novembro 1 2022, 16:06</p>
+                                    </div>
+                                    <h5>Rua Major Paladino, 55 - Vila Leopoldina - São Paulo - SP, 05307-000</h5>
+                                    <div class="bloco_baixo">
+                                        <div class="principal_bloco">
+                                            <div class="origem_bloco">
+                                                <div class="fig_cima">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <p>Avenida das Nações Unidas & Rua Tenente João Salustiano Lira - Vila
+                                                    Leopoldina - São Paulo - SP, 05307</p>
+                                            </div>
+                                            <div class="destino_bloco">
+                                                <div class="fig_baixo">
+                                                    <img src="" alt="">
+                                                </div>
+                                                <p>Rua Major Paladino, 55 - Vila Leopoldina - São Paulo - SP, 05307-000
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="footer_bloco">
+                                            <button>Ajuda</button>
+                                            <button>Ver detalhes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+
+    <footer style="background-color: #5465FF;">
+        <div class="row">
+            <h2>Fale conosco:</h2>
+            <ul class="social_media">
+                <li><a href="#"><img src="img/icons/icon_fb.svg"></a></li>
+                <li><a href="https://www.youtube.com/channel/UC4sgDWUic84nLQgW5AKZtiw" target="_blank"><img
+                            src="img/icons/icon_yt.svg"></a></li>
+                <li><a href="#"><img src="img/icons/icon_linkedin.svg"></a></li>
+            </ul>
+        </div>
+
+        <p>DevZilla | Todos os direitos reservados<sup>©</sup></p>
+        <a href="mailto:devzillacompany@gmail.com">devzillacompany@gmail.com</a>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

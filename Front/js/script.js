@@ -48,17 +48,22 @@ openModalButton.forEach((el)=> {
      
 })
 
-document.querySelector('#etapa2').addEventListener('click', ()=>{
-    document.getElementById('confirmar_carro').style.display = "none";
-    document.getElementById('andamento').children[1].classList.add('done');
-    document.getElementById('destino').style.display = "flex";
-})
+const etapa1 = document.getElementById('confirmar_carro');
+const etapa2 = document.getElementById('destino');
+const etapa3 = document.getElementById('pagamento');
+const etapa4 = document.getElementById('retirada');
+const etapa5 = document.getElementById('corrida');
+const andamento = document.getElementById('andamento');
 
-document.querySelector('#etapa1').addEventListener('click', ()=>{
-    document.getElementById('confirmar_carro').style.display = "flex";
-    document.getElementById('andamento').children[1].classList.remove('done');
-    document.getElementById('destino').style.display = "none";
-})
+function mudarTela(atual, etapa, proxima, voltar_avancar){
+    etapa--;
+    atual.style.display = "none";
+    voltar_avancar == 'avancar' ? andamento.children[etapa].classList.add('done') : andamento.children[etapa].classList.remove('done')
+    proxima.style.display = "flex"
+}
+
+document.querySelector('#etapa2').addEventListener('click', ()=> mudarTela(etapa1, 2, etapa2, 'avancar'))
+document.querySelector('#etapa1').addEventListener('click', ()=> mudarTela(etapa2, 2, etapa1, 'voltar'))
 
 const destino = document.querySelector('#end_destino');
 
@@ -70,18 +75,12 @@ document.querySelector('#etapa3').addEventListener('click', ()=>{
         const erro = document.querySelector('.erro_destino');
         if (destino !== '') {
             erro.style.display = "none";
-            document.getElementById('pagamento').style.display = "flex";
-            document.getElementById('andamento').children[2].classList.add('done');
-            document.getElementById('destino').style.display = "none";
+            mudarTela(etapa2, 3, etapa3, 'avancar')
         }
         else erro.style.display = "inline-block"
 })
 
-document.querySelector('#volta_destino').addEventListener('click', ()=>{
-    document.getElementById('destino').style.display = "flex";
-    document.getElementById('andamento').children[2].classList.remove('done');
-    document.getElementById('pagamento').style.display = "none";
-})
+document.querySelector('#volta_destino').addEventListener('click', ()=> mudarTela(etapa3, 3, etapa2, 'voltar'))
 
 document.querySelector('#copiar_pix').addEventListener('click', ()=>{
     const codigo = document.querySelector('#cod_pix')
@@ -138,16 +137,13 @@ document.querySelector('#etapa4').addEventListener('click', ()=>{
         validar(validade, erro_val)
     }
 
-    if (valido) {
-        document.getElementById('retirada').style.display = "flex";
-        document.getElementById('andamento').children[3].classList.add('done');
-        document.getElementById('pagamento').style.display = "none";
-    }
+    if (valido) mudarTela(etapa3, 4, etapa4, 'avancar')
 })
 
 document.querySelector('#etapa5').addEventListener('click', ()=> {
-    document.getElementById('corrida').style.display = "flex";
+    
+    mudarTela(etapa4, 4, etapa5, 'avancar')
+
     document.getElementById('andamento').style.display = "none";
     document.getElementById('title').style.display = "none";
-    document.getElementById('retirada').style.display = "none";
 })

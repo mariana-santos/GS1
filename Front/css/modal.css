@@ -129,7 +129,7 @@
     display: flex;
 }
 
-#confirmar_carro, #destino{
+#confirmar_carro, #destino, #pagamento, #retirada, #corrida{
     flex-wrap: wrap;
 }
 
@@ -137,7 +137,7 @@
     width: 33%;
 }
 
-.wrap_img img, .wrap img, .wrap input{
+.wrap_img img, .wrap img, .wrap input, .wrap_cartao textarea{
     width: 100%;
 }
 
@@ -182,7 +182,7 @@
     font-size: 1.5em;
 }
 
-.endereco span{
+.endereco span:not(.origem){
     font-size: .7em;
 }
 
@@ -196,17 +196,25 @@
     font-size: 1.1em;
 }
 
-#modal h2, #modal p{
+#confirmar_carro .footer{
+    margin-top: 0;
+}
+
+.subtitulo, .sub_sub{
     width: 100%;
     text-align: center;
 }
 
-#destino h2 {
+.subtitulo {
     margin-bottom: 0;
 }
 
-#destino p{
+.sub_sub{
     margin-top: 0;
+}
+
+.sub_sub span{
+    font-size: .8em;
 }
 
 .wrap {
@@ -255,7 +263,7 @@
             border 0.3s ease-in-out;
 }
 
-.timeline-marker:not(.destino)::after{
+.timeline-marker:not(.destino_marker)::after{
     content: "";
     width: 2px;
     background: rgba(59, 61, 69, 0.33);
@@ -288,10 +296,151 @@
 
 .itens_previsto{
     font-size: 1.3em;
+    width: 100%;
+    margin-top: 0
 }
 
 #modal .container{
     padding-top: 1em;
+}
+
+/* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+/* IMAGE STYLES */
+[type=radio] + div {
+    cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + div {
+    outline: 2px solid #5465FF;
+    border-color: #5465FF;
+}
+
+.formas_pgto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+    margin: 2em 0;
+}
+
+.option{
+    border: solid 1px #3B3D45;
+    width: 170px;
+    border-radius: 7px;
+    text-align: center;
+    padding: 1em;
+}
+
+.option h3{
+    margin-bottom: 0;
+}
+
+.info_pgto{
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.info_pgto p{
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.info_pgto p, .wrap_cartao{
+    width: 30%;
+}
+
+.wrap_cartao{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.wrap_cartao img{
+    width: 70%;
+    margin: auto;
+    max-width: 100%;
+    display: flex;
+}
+
+.option img{
+    max-width: 100%;
+    width: 70px;
+}
+
+.wrap_cartao .btn{
+    padding: 5px;
+    font-size: 1em;
+    margin: 0;
+    margin-top: 1em;
+    margin-left: auto;
+}
+
+#info_cartao .wrap_cartao{
+    width: 65%;
+}
+
+.wrap_input{
+    display: flex;
+    gap: 2em;
+}
+
+.wrap_input div{
+    width: 50%;
+}
+
+.wrap_input input{
+    width: 100%;
+}
+
+.wrap_cartao label{
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+#retirada h3{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    width: 100%;
+}
+
+#cod_carro{
+    width: 100%;
+    letter-spacing: .3em;
+    font-weight: 800;
+    font-size: 4em;
+    text-align: center;
+    font-family: 'Kanit';
+    padding: .2em .5em;
+    margin: 0;
+}
+
+#corrida div{
+    width: 100%;
+    text-align: center;
+}
+
+#corrida div img{
+    width: 40%;
+    margin: auto;
+    margin-bottom: 3em;
+}
+
+.btn{ text-align: center; }
+
+#retirada .footer{
+    justify-content: end;
 }
 
 @media screen and (max-width: 1300px){
@@ -301,6 +450,17 @@
 
     #modal{
         width: 80%;
+    }
+}
+
+@media screen and (max-width: 999px){
+    .option{
+        width: 100px;
+        height: 80%;
+    }
+
+    .formas_pgto label{
+        height: 100%;
     }
 }
 
@@ -323,6 +483,7 @@
         width: calc(50% - 5px);
         margin-top: 0;
         font-size: 1.1em;
+        margin-top: 1em;
     }
 
     .wrap_info div, .endereco{
@@ -382,6 +543,23 @@
     .detalhes_viagem ul, .detalhes_viagem p{
         width: 50% !important;
     }
+
+    .info_pgto p, .wrap_cartao {
+        width: 100%;
+    }
+
+    .wrap_cartao img {
+        width: 50%;
+    }
+
+    #cod_carro{
+        letter-spacing: .1em;
+        font-size: 1.5em;
+    }
+
+    #corrida div img{
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -399,6 +577,17 @@
 
     .endereco p {
         font-size: 1.2em;
+    }
+
+    .option {
+        width: 50px;
+        height: 75%;
+    }
+
+    .option h3 {
+        margin-bottom: 0;
+        font-size: .8em;
+        line-height: normal;
     }
 }
 

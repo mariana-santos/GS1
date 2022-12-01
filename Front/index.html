@@ -46,8 +46,8 @@
             </section>
         </header>
 
-        <div id="fade" class=""></div>
-        <modal id="modal" class="">
+        <div id="fade" class="hide"></div>
+        <modal id="modal" class="hide">
             <section class="container">
 
                 <section id="header">
@@ -67,8 +67,8 @@
                         <h2>Retirada</h2>
                     </div>
 
-                    <div id="confirmar_carro" style="display: none;">
-                        <h2>Carro selecionado:</h2>
+                    <div id="confirmar_carro" style="display: flex;">
+                        <h2 class="subtitulo">Carro selecionado:</h2>
 
                         <div class="wrap_img">
                             <img src="img/car.png" id="carro_selecionado">
@@ -110,23 +110,26 @@
 
                         <div class="endereco">
                             <img src="img/icons/location.svg">
-                            <p><strong>Endereço de encontro:</strong> Av. Paulista, 1106  <span>(a 450m de distância)</span></p>
+                            <p><strong>Endereço de encontro:</strong> <span class="origem"></span> <span>(a 450m de distância)</span></p>
                         </div>
 
                         <section class="footer">
-                            <button class="btn btn_border border_black cancelar">ESCOLHER OUTRO ENDEREÇO</button>
+                            <button class="btn btn_border border_black close-modal">ESCOLHER OUTRO ENDEREÇO</button>
                             <button class="btn btn_black" id="etapa2">CONTINUAR</button>
                         </section>
                     </div>
 
 
-                    <div id="destino" style="display: flex;">
-
-                        <h2>Selecione seu destino:</h2>
-                        <p>Não se preocupe, você pode passar em outros pontos e parar em outro destino</p>
+                    <div id="destino" style="display: none;">
+                        <h2 class="subtitulo">Selecione seu destino:</h2>
+                        <p class="center sub_sub">Não se preocupe, você pode passar em outros pontos e parar em outro destino</p>
 
                         <div class="wrap">
-                            <input type="text" value="Av. Brg. Faria Lima, 2293 - Itaim Bibi" placeholder="Digite um endereço de destino">
+                            <div class="input">
+                                <input type="text" value="Av. Brg. Faria Lima, 2293 - Itaim Bibi" placeholder="Digite um endereço de destino" id="end_destino">
+                                <span class="erro erro_destino">Você precisa escolher um endereço de destino!</span>
+                            </div>
+                            
                             <img src="img/mapa2.png">
                         </div>
 
@@ -140,8 +143,8 @@
                                         <strong>Endereço de origem: </strong>
                                     </div>
                                     <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        Av. Paulista, 1106  - Bela Vista
+                                    <div class="timeline-content origem">
+                                        
                                     </div>
                                 </li>
 
@@ -149,9 +152,8 @@
                                     <div class="timeline-info">
                                         <strong>Destino selecionado: </strong>
                                     </div>
-                                    <div class="timeline-marker destino"></div>
-                                    <div class="timeline-content">
-                                        Av. Brg. Faria Lima, 2293 - Itaim Bibi
+                                    <div class="timeline-marker destino_marker"></div>
+                                    <div class="timeline-content destino">
                                     </div>
                                 </li>
                             </ul>
@@ -167,7 +169,7 @@
                         </div>
 
                         <section class="footer">
-                            <button class="btn btn_border border_black cancelar">VOLTAR</button>
+                            <button class="btn btn_border border_black" id="etapa1">VOLTAR</button>
                             <button class="btn btn_black" id="etapa3">CONTINUAR</button>
                         </section>
                     </div>
@@ -175,54 +177,110 @@
 
                     <div id="pagamento" style="display: none;">
 
-                        <h2>Selecione seu destino:</h2>
-                        <p>Não se preocupe, você pode passar em outros pontos e parar em outro destino</p>
+                        <h2 class="subtitulo">Pagamento:</h2>
+                        <p class="center sub_sub"><strong>Importante:</strong> <span>Esse valor é apenas uma <u>estimativa</u> de acordo com o destino selecionado.  Caso você ande menos que o esperado, os <u>créditos ficarão guardados para sua próxima corrida</u>. Caso você ande mais que o esperado, <u>você será cobrado no fim da corrida.</u></span></p>
 
-                        <div class="wrap">
-                            <input type="text" value="Av. Brg. Faria Lima, 2293 - Itaim Bibi" placeholder="Digite um endereço de destino">
-                            <img src="img/mapa2.png">
+                        <div class="formas_pgto">
+                            <label>
+                                <input type="radio" name="forma_pgt" value="pix" checked class="pix">
+                                <div class="option">
+                                    <img src="img/icons/pix.svg" alt="Ícone Pix">
+                                    <h3>pix</h3>
+                                </div>
+                              </label>
+                              
+                              <label>
+                                <input type="radio" name="forma_pgt" value="credito" class="cartao">
+                                <div class="option">
+                                    <img src="img/icons/card1.svg" alt="Ícone Cartão">
+                                    <h3>cartão de crédito</h3>
+                                </div>
+                              </label>
+
+                              <label>
+                                <input type="radio" name="forma_pgt" value="debito" class="cartao">
+                                <div class="option">
+                                    <img src="img/icons/card2.svg" alt="Ícone Cartão">
+                                    <h3>cartão de débito</h3>
+                                </div>
+                              </label>
                         </div>
 
-                        <div class="wrap detalhes_viagem">
+                        <div class="info_pgto" id="info_pix">
+                            <p><strong>Total:</strong> R$15,00 <br> <br>
+                                Escaneie o QR code com o app do seu banco ou copie o código PIX</p>
 
-                            <h3>Viagem Prevista</h3>
+                            <div class="wrap_cartao">
+                                <img src="img/qrcode.png">
+                            </div>
 
-                            <ul class="timeline">
-                                <li class="timeline-item">
-                                    <div class="timeline-info">
-                                        <strong>Endereço de origem: </strong>
+                            <div class="wrap_cartao">
+                                <div class="input">
+                                    <textarea id="cod_pix" readonly disabled rows="4">00020101021226740014br.gov.bcb.pix2552pix.ebanx.com/qr/v2/146EA5CC340E8CC40723A70C7A9291AD5204000053039865802BR5911EBANX Ltda.6008CURITIBA62070503***63042F66</textarea>
+                                    <span class="sucesso sucesso_copia">Código pix copiado com sucesso!</span>
+                                </div>
+                                <button class="btn btn_border border_black" id="copiar_pix">COPIAR CÓDIGO</button>
+                            </div>
+
+                        </div>
+
+                        <div class="info_pgto" id="info_cartao" style="display: none;">
+                            <p><strong>Total:</strong> R$15,00 <br> <br>
+                                Digite as informações do seu cartão para continuar</p>
+
+                            <div class="wrap_cartao">
+                                <div class="input">
+                                    <label for="nro_cartao">Numero do Cartão:</label>
+                                    <input type="text" placeholder="Digite o número do seu cartão" id="nro_cartao">
+                                    <span class="erro erro_nro_cartao">Seu número de cartão precisa ser válido!</span>
+                                </div>
+                                
+
+                                <div class="wrap_input">
+                                    <div class="input">
+                                        <label for="validade_cartao">Data de Validade:</label>
+                                        <input type="date" placeholder="Digite a data de validade do cartão" id="validade_cartao">
+                                        <span class="erro erro_val_cartao">Sua data da CNH precisa ser válida!</span>
                                     </div>
-                                    <div class="timeline-marker"></div>
-                                    <div class="timeline-content">
-                                        Av. Paulista, 1106  - Bela Vista
-                                    </div>
-                                </li>
 
-                                <li class="timeline-item">
-                                    <div class="timeline-info">
-                                        <strong>Destino selecionado: </strong>
+                                    <div class="input">
+                                        <label for="cvv_cartao">Código de Segurança:</label>
+                                        <input type="password" placeholder="Digite o CVV do cartão" id="cvv_cartao">
+                                        <span class="erro erro_cvv_cartao">Você precisa digitar números válidos</span>
                                     </div>
-                                    <div class="timeline-marker destino"></div>
-                                    <div class="timeline-content">
-                                        Av. Brg. Faria Lima, 2293 - Itaim Bibi
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <p class="center itens_previsto">
-                                <strong>Distância:</strong> 6,7km <br>
-                                <strong>Tempo previsto:</strong> 14min <br>
-                                <strong>Valor previsto*:</strong> R$15,00 <br>
-                            </p>
-
-                            <small class="center">*O valor pode mudar caso o caminho não seja o previsto e o cliente passe mais tempo que o esperado no carro</small>
+                                </div>
+                            </div>
 
                         </div>
 
                         <section class="footer">
-                            <button class="btn btn_border border_black cancelar">VOLTAR</button>
-                            <button class="btn btn_black" id="etapa3">CONTINUAR</button>
+                            <button class="btn btn_border border_black" id="volta_destino">VOLTAR</button>
+                            <button class="btn btn_black" id="etapa4">CONTINUAR</button>
                         </section>
+                    </div>
+
+
+                    <div id="retirada" style="display: none;">
+
+                        <h2 class="subtitulo">Retire seu veículo:</h2>
+                        <p class="center sub_sub"><strong>Importante:</strong> <span> O carro ficará disponível por até 20 minutos após a validação do pagamento. Caso você  não apareça nesse período, o carro ficara disponível para outros usuários e o valor será estornado para sua conta.</p>
+
+                        <h3>Digite o seguinte código para desbloquear o carro:</h3>
+
+                        <input type="text" value="123ABC%)@23!5V$" id="cod_carro" disabled readonly>
+
+                        <section class="footer">
+                            <button class="btn btn_black" id="etapa5">JÁ DESBLOQUEEI</button>
+                        </section>
+                    </div>
+
+                    <div id="corrida" style="display: none;">
+                        <h2 class="subtitulo">Corrida em andamento</h2>
+                        <p class="sub_sub">Para mais informações sobre a sua corrida ou para visualizar o código novamente, clique no botão abaixo</p>
+
+                        <div><img src="img/ill_car2.jpg"></div>
+
+                        <a href="viagem_andamento.html" class="btn btn_black">ACOMPANHAR CORRIDA</a>
                     </div>
 
                 </section>
@@ -287,8 +345,16 @@
                 <h1 class="line_after">ALUGUE CARROS DISPONÍVEIS PERTO DE VOCÊ</h1>
 
                 <p>Para começar, confirme seu endereço e selecione um carro disponível perto de você:</p>
-                <input type="text" value="Av. Paulista, 1106." placeholder="Digite um endereço de origem">
-                <button class="btn btn_purple open-modal">Confirmar</button>
+
+                <div class="input">
+                    <input type="text" value="Av. Paulista, 1106 - Bela Vista" placeholder="Digite um endereço de origem" id="end_origem">
+                    <span class="erro erro_origem">Você precisa escolher um endereço de origem!</span>
+                </div>
+                
+                <div>
+                    <button class="btn btn_purple open-modal">Confirmar</button>
+                </div>
+                
 
                 <img src="img/mapa1.png" class="open-modal">
             </section>

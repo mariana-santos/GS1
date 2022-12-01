@@ -86,7 +86,13 @@ h1, h2, h3{
     border-style: none;
 }
 
+#aluguel .input{
+    width: 60%;
+    margin: auto;
+}
+
 #aluguel .btn_purple{
+    margin-top: 1em;
     font-size: 1em;
 }
 
@@ -201,7 +207,7 @@ input, textarea{
     outline: none;
     padding: .5em 1em;
     border-radius: 8px;
-    margin: 1em 0;
+    margin-top: 1em;
     font-family: 'Manrope';
     font-weight: 600;
     color: #333;
@@ -210,8 +216,16 @@ input, textarea{
     box-sizing: border-box;
 }
 
-#aluguel input{
-    width: 60%;
+#aluguel input, .input .erro, .input .sucesso{
+    width: 100%;
+}
+
+.input{
+    margin-bottom: 1em;
+}
+
+.input input{
+    width: 100%;
 }
 
 #aluguel img{
@@ -257,6 +271,20 @@ label{
 
 #contato .btn{
     margin-top: 1em;
+}
+
+.erro, .sucesso{
+    display: none;
+    text-align: start;
+    font-size: .8em;
+}
+
+.sucesso{
+    color: #71B340;
+}
+
+.erro{
+    color: #FF4545;
 }
 
 @media screen and (max-width: 1300px) {

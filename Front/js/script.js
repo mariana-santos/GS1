@@ -30,3 +30,9 @@ const toggleModal = () => {
 [openModalButton, closeModalButton, fade].forEach((el) => {
     el.addEventListener("click", () => toggleModal());
 });
+
+document.querySelector('#etapa2').addEventListener('click', ()=>{
+    document.getElementById('confirmar_carro').style.display = "none";
+    document.getElementById('andamento').children[1].classList.add('done');
+    document.getElementById('destino').style.display = "flex";
+})

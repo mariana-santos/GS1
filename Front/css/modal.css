@@ -14,10 +14,12 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width:60%;
-    max-width: 90%;
+    max-width: 95%;
     background-color: #fff;
     z-index: 1000000;
     color: #3B3D45;
+    max-height: 95vh;
+    overflow-y: auto;
 }
 
 #fade,
@@ -53,13 +55,6 @@
     padding: 0px 10px;
     margin-top: 10px;
 }
-#modal form textarea{
-    height: 25vh;
-    max-height: 25vh;
-    resize: vertical;
-    overflow-y: scroll;
-    padding-top: 10px;
-}
 
 #header .close-modal{
     width: 45px;
@@ -90,7 +85,7 @@
     transform: rotate(-46deg);
 }
 
-#header, #footer{
+#header, .footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -106,6 +101,7 @@
     justify-content: space-between;
     align-items: flex-end;
     gap: 20px;
+    margin-top: 1em;
 }
 
 #andamento h2{
@@ -113,6 +109,7 @@
     text-align: center;
     width: 25%;
     line-height: 1.2em;
+    margin: 0;
 }
 
 #andamento h2::after{
@@ -130,18 +127,17 @@
 
 #confirmar_carro{
     display: flex;
-    flex-wrap: wrap;
 }
 
-#confirmar_carro h2{
-    width: 100%;
+#confirmar_carro, #destino{
+    flex-wrap: wrap;
 }
 
 #modal .wrap_img{
     width: 33%;
 }
 
-.wrap_img img{
+.wrap_img img, .wrap img, .wrap input{
     width: 100%;
 }
 
@@ -190,11 +186,224 @@
     font-size: .7em;
 }
 
-#footer{
+.footer{
     margin-top: 2em;
+    width: 100%;
 }
 
-#footer .btn{
+.footer .btn{
     margin: initial !important;
     font-size: 1.1em;
+}
+
+#modal h2, #modal p{
+    width: 100%;
+    text-align: center;
+}
+
+#destino h2 {
+    margin-bottom: 0;
+}
+
+#destino p{
+    margin-top: 0;
+}
+
+.wrap {
+    width: 50%;
+}
+
+.detalhes_viagem {
+    margin-left: 2em;
+    width: calc(50% - 2em);
+}
+
+.timeline {
+    line-height: 1.4em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.timeline-item {
+    padding-left: 40px;
+    position: relative;
+}
+
+.timeline-item:last-child{
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 15px;
+}
+
+.timeline-marker::before{
+    background: #5465FF;
+    border: 3px solid transparent;
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 5px;
+    position: absolute;
+    top: 4px; left: 0;
+    width: 5px;
+    transition: background 0.3s ease-in-out,
+            border 0.3s ease-in-out;
+}
+
+.timeline-marker:not(.destino)::after{
+    content: "";
+    width: 2px;
+    background: rgba(59, 61, 69, 0.33);
+    display: block;
+    position: absolute;
+    top: 15px; bottom: 0; left: 5px;
+    height: calc(100% + 25px);
+}
+
+.timeline-info{
+    font-size: 1.2em;
+    margin-bottom: .5em;
+}
+
+.timeline-content{
+    text-align: start;
+    margin-bottom: 2em;
+}
+
+.detalhes_viagem h3{
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.center{
+    text-align: center;
+    display: inline-block;
+}
+
+.itens_previsto{
+    font-size: 1.3em;
+}
+
+#modal .container{
+    padding-top: 1em;
+}
+
+@media screen and (max-width: 1300px){
+    .btn{
+        padding: 5px 20px;
+    }
+
+    #modal{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .wrap_info {
+        width: 100%;
+    }
+
+    #modal .wrap_img {
+        width: 50%;
+        margin: auto;
+    }
+
+    #andamento{
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    #andamento h2{
+        width: calc(50% - 5px);
+        margin-top: 0;
+        font-size: 1.1em;
+    }
+
+    .wrap_info div, .endereco{
+        padding: 0;
+    }
+
+    #modal h2 {
+        text-align: center;
+    }
+
+    #andamento h2::after{
+        height: 3px;
+    }
+
+    .border{
+        border-style: none;
+    }
+
+    .footer{
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .footer .btn{
+        width: 100%;
+        text-align: center;
+        margin-top: 1em !important;
+        justify-content: center;
+    }
+
+    .space{
+        display: none;
+    }
+
+    #header .close-modal{
+        width: 35px;
+        height: 35px;
+    }
+
+    .wrap {
+        width: 100%;
+    }
+
+    .detalhes_viagem {
+        margin-left: 0;
+        margin-top: 2em;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .detalhes_viagem h3{
+        width: 100%;
+    }
+
+    .detalhes_viagem ul, .detalhes_viagem p{
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #title{
+        font-size: 30px;
+    }
+
+    #modal {
+        width: 95%;
+    }
+
+    #modal .wrap_img {
+        width: 70%;
+    }
+
+    .endereco p {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .detalhes_viagem ul, .detalhes_viagem p{
+        width: 100% !important;
+    }
 }

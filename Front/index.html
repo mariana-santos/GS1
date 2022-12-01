@@ -46,13 +46,13 @@
             </section>
         </header>
 
-        <div id="fade" class="hide"></div>
-        <modal id="modal" class="hide">
+        <div id="fade" class=""></div>
+        <modal id="modal" class="">
             <section class="container">
 
                 <section id="header">
-                    <div></div>
-                    <h1 id="title">Alugar carro elétrico</h1>
+                    <div class="space"></div>
+                    <h1 id="title">Alugar</h1>
                     <button class="close-modal">
                         <div></div>
                         <div></div>
@@ -62,12 +62,12 @@
                 <section id="content">
                     <div id="andamento">
                         <h2 class="done">Confirmar carro</h2>
-                        <h2>Informações adicionais</h2>
+                        <h2>Destino</h2>
                         <h2>Pagamento</h2>
-                        <h2>Retirar veículo</h2>
+                        <h2>Retirada</h2>
                     </div>
 
-                    <div id="confirmar_carro">
+                    <div id="confirmar_carro" style="display: none;">
                         <h2>Carro selecionado:</h2>
 
                         <div class="wrap_img">
@@ -112,12 +112,119 @@
                             <img src="img/icons/location.svg">
                             <p><strong>Endereço de encontro:</strong> Av. Paulista, 1106  <span>(a 450m de distância)</span></p>
                         </div>
-                    </div>
-                </section>
 
-                <section id="footer">
-                    <button class="btn btn_border border_black close-modal">ESCOLHER OUTRO ENDEREÇO</button>
-                    <button class="btn btn_black" id="confirmar_carro">CONTINUAR</button>
+                        <section class="footer">
+                            <button class="btn btn_border border_black cancelar">ESCOLHER OUTRO ENDEREÇO</button>
+                            <button class="btn btn_black" id="etapa2">CONTINUAR</button>
+                        </section>
+                    </div>
+
+
+                    <div id="destino" style="display: flex;">
+
+                        <h2>Selecione seu destino:</h2>
+                        <p>Não se preocupe, você pode passar em outros pontos e parar em outro destino</p>
+
+                        <div class="wrap">
+                            <input type="text" value="Av. Brg. Faria Lima, 2293 - Itaim Bibi" placeholder="Digite um endereço de destino">
+                            <img src="img/mapa2.png">
+                        </div>
+
+                        <div class="wrap detalhes_viagem">
+
+                            <h3>Viagem Prevista</h3>
+
+                            <ul class="timeline">
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <strong>Endereço de origem: </strong>
+                                    </div>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        Av. Paulista, 1106  - Bela Vista
+                                    </div>
+                                </li>
+
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <strong>Destino selecionado: </strong>
+                                    </div>
+                                    <div class="timeline-marker destino"></div>
+                                    <div class="timeline-content">
+                                        Av. Brg. Faria Lima, 2293 - Itaim Bibi
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <p class="center itens_previsto">
+                                <strong>Distância:</strong> 6,7km <br>
+                                <strong>Tempo previsto:</strong> 14min <br>
+                                <strong>Valor previsto*:</strong> R$15,00 <br>
+                            </p>
+
+                            <small class="center">*O valor pode mudar caso o caminho não seja o previsto e o cliente passe mais tempo que o esperado no carro</small>
+
+                        </div>
+
+                        <section class="footer">
+                            <button class="btn btn_border border_black cancelar">VOLTAR</button>
+                            <button class="btn btn_black" id="etapa3">CONTINUAR</button>
+                        </section>
+                    </div>
+
+
+                    <div id="pagamento" style="display: none;">
+
+                        <h2>Selecione seu destino:</h2>
+                        <p>Não se preocupe, você pode passar em outros pontos e parar em outro destino</p>
+
+                        <div class="wrap">
+                            <input type="text" value="Av. Brg. Faria Lima, 2293 - Itaim Bibi" placeholder="Digite um endereço de destino">
+                            <img src="img/mapa2.png">
+                        </div>
+
+                        <div class="wrap detalhes_viagem">
+
+                            <h3>Viagem Prevista</h3>
+
+                            <ul class="timeline">
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <strong>Endereço de origem: </strong>
+                                    </div>
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        Av. Paulista, 1106  - Bela Vista
+                                    </div>
+                                </li>
+
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <strong>Destino selecionado: </strong>
+                                    </div>
+                                    <div class="timeline-marker destino"></div>
+                                    <div class="timeline-content">
+                                        Av. Brg. Faria Lima, 2293 - Itaim Bibi
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <p class="center itens_previsto">
+                                <strong>Distância:</strong> 6,7km <br>
+                                <strong>Tempo previsto:</strong> 14min <br>
+                                <strong>Valor previsto*:</strong> R$15,00 <br>
+                            </p>
+
+                            <small class="center">*O valor pode mudar caso o caminho não seja o previsto e o cliente passe mais tempo que o esperado no carro</small>
+
+                        </div>
+
+                        <section class="footer">
+                            <button class="btn btn_border border_black cancelar">VOLTAR</button>
+                            <button class="btn btn_black" id="etapa3">CONTINUAR</button>
+                        </section>
+                    </div>
+
                 </section>
                 
             </section>

@@ -133,6 +133,11 @@ label{
 
 .arrow::after{ background: url('../img/icons/icon_arrow_right.svg') center / contain; }
 
+
+input, textarea {
+    margin: 1em 0;
+}
+
 @media screen and (max-width: 1400px) {
     .wrap_form .img_login{
         display: none;

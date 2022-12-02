@@ -1,0 +1,159 @@
+#viagem{
+    padding-left: calc((100vw - 1280px) / 2 + 275px);
+    padding-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4em;
+}
+
+.mapa, .detalhes_viagem{
+    width: calc(50% - 4em);
+}
+
+.detalhes_viagem{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap_img img{
+    max-width: 100%;
+}
+
+#viagem h1{
+    font-size: 2.5em;
+}
+
+#viagem h1::after {
+    margin-top: 0;
+    margin-bottom: 1em;
+    height: 5px;
+}
+
+small{
+    margin-top: 2em !important;
+}
+
+.timeline-marker:not(.marker_modal)::after{
+    background: #fff;
+}
+
+#viagem .timeline{
+    margin: 2em auto;
+    margin-bottom: 0;
+    width: fit-content;
+}
+
+.endereco{
+    padding: 0;
+    margin-top: 1em;
+    gap: 10px;
+}
+
+.endereco p{
+    font-weight: 300;
+}
+
+.endereco img{
+    width: 2em;
+}
+
+.btn_white{
+    margin: 2em auto;
+    color: #3B3D45;
+    width: fit-content;
+}
+
+.sub_sub a{
+    color: #3B3D45;
+}
+
+.sub_sub{
+    margin-top: 1em;
+}
+
+#info_corrida .subtitulo{
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 1.3em;
+}
+
+.wrap_detalhes{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#modal .detalhes_viagem h3{
+    margin: 1em 0;
+}
+
+.wrap_detalhes p span{
+    font-size: .7em;
+    font-weight: 700;
+}
+
+.total{
+    width: 100%;
+    margin: 0 !important;
+    font-size: 2em;
+}
+
+.footer{
+    margin-top: 1em;
+}
+
+#info_corrida, #pagamento_final{
+    flex-wrap: wrap;
+}
+
+#info_corrida .footer{
+    justify-content: end;
+}
+
+#pagamento_final .detalhes_viagem{
+    width: 100%;
+    margin: 2em 0 1em 0;
+}
+
+@media screen and (max-width: 1300px) {
+    #viagem{
+        padding-left: calc((100vw - 1280px) / 2 + 200px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .mapa, #viagem .detalhes_viagem{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    #viagem{
+        padding: 2em;
+        gap: 0;
+    }
+
+    .classe_historico {
+        padding-top: 70px;
+    }
+
+    .wrap_detalhes .detalhes_viagem{
+        margin-top: 0;
+        width: 50%;
+    }
+
+    .wrap_detalhes .detalhes_viagem ul{
+        width: 100% !important;
+    }
+
+    .wrap_detalhes .detalhes_viagem p, .info_pgto p, .wrap_cartao{
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #modal .detalhes_viagem h3{
+        height: 2.5em;
+    }
+}

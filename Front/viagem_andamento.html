@@ -8,7 +8,9 @@
     <link rel="stylesheet" type="text/css" href="css/header_footer.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/historico.css">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+    <link rel="stylesheet" type="text/css" href="css/viagem.css">
+    <title>Solar - Acompanhar Viagem</title>
 </head>
 
 <body>
@@ -38,7 +40,7 @@
                 <li><a href="index.html#aluguel">alugar</a></li>
                 <li><a href="index.html#sobre">sobre</a></li>
                 <li><a href="index.html#contato">contato</a></li>
-                <li><a href="historico.html">histórico de viagens</a></li>
+                <li><a href="historico.html">minhas viagens</a></li>
             </ul>
         </nav>
 
@@ -48,116 +50,284 @@
         </section>
     </header>
 
+    <div id="fade" class="hide"></div>
+    <modal id="modal" class="hide">
+        <section class="container">
+
+            <section id="header">
+                <div class="space"></div>
+                <h1 id="title">Corrida finalizada</h1>
+                <button class="close-modal">
+                    <div></div>
+                    <div></div>
+                </button>
+            </section>
+
+            <section id="content">
+                <section id="info_corrida" style="display: flex;">
+                    <p class="sub_sub">As informações de todas as suas corridas podem ser encontradas na página <a href="historico.html" target="_blank">“histórico”</a> com mais detalhes de cada uma.</p>
+
+                    <h2 class="subtitulo">Opa! Parece que seu destino foi um pouco diferente do que você planejou. Mas não se preocupe, você pode pagar a diferença de valores facilmente no site! :)</h2>
+
+                    <div class="wrap_detalhes">
+                        <div class="wrap detalhes_viagem">
+                            <h3>Viagem Prevista</h3>
+        
+                            <ul class="timeline">
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <strong>Endereço de origem: </strong>
+                                    </div>
+                                    <div class="timeline-marker marker_modal"></div>
+                                    <div class="timeline-content origem">
+                                        Av. Paulista, 1106  - Bela Vista
+                                    </div>
+                                </li>
+        
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <strong>Destino selecionado: </strong>
+                                    </div>
+                                    <div class="timeline-marker destino_marker"></div>
+                                    <div class="timeline-content destino">
+                                        Av. Brg. Faria Lima, 2293 - Itaim Bibi
+                                    </div>
+                                </li>
+                            </ul>
+        
+                            <p class="center itens_previsto">
+                                <strong>Distância:</strong> 6,7km <br>
+                                <strong>Tempo previsto:</strong> 14min <br>
+                                <strong>Valor previsto:</strong> R$15,00 <span>(pago)</span><br>
+                            </p>
+                        </div>
+
+                        <div class="wrap detalhes_viagem">
+                            <h3>Viagem Final</h3>
+        
+                            <ul class="timeline">
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <strong>Endereço de origem: </strong>
+                                    </div>
+                                    <div class="timeline-marker marker_modal"></div>
+                                    <div class="timeline-content origem">
+                                        Av. Paulista, 1106  - Bela Vista
+                                    </div>
+                                </li>
+        
+                                <li class="timeline-item">
+                                    <div class="timeline-info">
+                                        <strong>Destino selecionado: </strong>
+                                    </div>
+                                    <div class="timeline-marker destino_marker"></div>
+                                    <div class="timeline-content destino">
+                                        Av. Brg. Faria Lima, 293 - Itaim Bibi
+                                    </div>
+                                </li>
+                            </ul>
+        
+                            <p class="center itens_previsto">
+                                <strong>Distância:</strong> 7,5km <br>
+                                <strong>Tempo previsto:</strong> 30min <br>
+                                <strong>Subtotal:</strong> R$32,98 <br>
+                                <strong>Adicional de horas:</strong> R$6,13 <br>
+                            </p>
+                        </div> 
+                    </div>
+
+                    <h1 class="center total">SUBTOTAL: R$85,11</h1>
+
+                    <section class="footer">
+                        <button class="btn btn_black" id="btn_pagamento">SEGUIR PARA O PAGAMENTO</button>
+                    </section>
+                </section>
+
+
+                <section id="pagamento_final" style="display: none;">
+
+                    <h2 class="subtitulo">Pagamento Final</h2>
+
+                    <div class="wrap detalhes_viagem">
+                        <p class="center itens_previsto">
+                            <strong>Distância:</strong> 7,5km <br>
+                            <strong>Tempo previsto:</strong> 30min <br>
+                            <strong>Subtotal:</strong> R$32,98 <br>
+                            <strong>Adicional de horas:</strong> R$6,13 <br>
+                            <strong>Valor já pago</strong> R$15,00 <br>
+                        </p>
+                    </div> 
+
+                    <h1 class="center total">TOTAL: R$15,98</h1>
+
+                    <div class="formas_pgto">
+                        <label>
+                            <input type="radio" name="forma_pgt" value="pix" checked class="pix">
+                            <div class="option">
+                                <img src="img/icons/pix.svg" alt="Ícone Pix">
+                                <h3>pix</h3>
+                            </div>
+                          </label>
+                          
+                          <label>
+                            <input type="radio" name="forma_pgt" value="credito" class="cartao">
+                            <div class="option">
+                                <img src="img/icons/card1.svg" alt="Ícone Cartão">
+                                <h3>cartão de crédito</h3>
+                            </div>
+                          </label>
+
+                          <label>
+                            <input type="radio" name="forma_pgt" value="debito" class="cartao">
+                            <div class="option">
+                                <img src="img/icons/card2.svg" alt="Ícone Cartão">
+                                <h3>cartão de débito</h3>
+                            </div>
+                          </label>
+                    </div>
+
+                    <div class="info_pgto" id="info_pix">
+                        <p><strong>Total:</strong> R$15,00 <br> <br>
+                            Escaneie o QR code com o app do seu banco ou copie o código PIX</p>
+
+                        <div class="wrap_cartao">
+                            <img src="img/qrcode.png">
+                        </div>
+
+                        <div class="wrap_cartao">
+                            <div class="input">
+                                <textarea id="cod_pix" readonly disabled rows="4">00020101021226740014br.gov.bcb.pix2552pix.ebanx.com/qr/v2/146EA5CC340E8CC40723A70C7A9291AD5204000053039865802BR5911EBANX Ltda.6008CURITIBA62070503***63042F66</textarea>
+                                <span class="sucesso sucesso_copia">Código pix copiado com sucesso!</span>
+                            </div>
+                            <button class="btn btn_border border_black" id="copiar_pix">COPIAR CÓDIGO</button>
+                        </div>
+
+                    </div>
+
+                    <div class="info_pgto" id="info_cartao" style="display: none;">
+                        <p><strong>Total:</strong> R$15,98 <br> <br>
+                            Digite as informações do seu cartão para continuar</p>
+
+                        <div class="wrap_cartao">
+                            <div class="input">
+                                <label for="nro_cartao">Numero do Cartão:</label>
+                                <input type="text" placeholder="Digite o número do seu cartão" id="nro_cartao">
+                                <span class="erro erro_nro_cartao">Seu número de cartão precisa ser válido!</span>
+                            </div>
+                            
+
+                            <div class="wrap_input">
+                                <div class="input">
+                                    <label for="validade_cartao">Data de Validade:</label>
+                                    <input type="date" placeholder="Digite a data de validade do cartão" id="validade_cartao">
+                                    <span class="erro erro_val_cartao">A data de validade precisa ser válida!</span>
+                                </div>
+
+                                <div class="input">
+                                    <label for="cvv_cartao">Código de Segurança:</label>
+                                    <input type="password" placeholder="Digite o CVV do cartão" id="cvv_cartao">
+                                    <span class="erro erro_cvv_cartao">Você precisa digitar números válidos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <section class="footer">
+                        <button class="btn btn_border border_black" id="voltar">VOLTAR</button>
+                        <button class="btn btn_black" id="pgto_realizado">FINALIZAR</button>
+                    </section>
+                </section>
+
+                <section id="corrida" style="display: none;">
+                    <h2 class="subtitulo">Pagamento confirmado!</h2>
+                    <p class="sub_sub">Muito obrigada por correr com a gente! Te esperamos para novas viagens! :) <br> 
+                    Clique no botão abaixo para iniciar uma nova viagem.
+                    </p>
+
+                    <div><img src="img/ill_car2.jpg"></div>
+
+                    <div><a href="index.html#aluguel" class="btn btn_black">NOVA VIAGEM</a></div>   
+                </section>
+                
+            </section>
+
+        </section>
+    </modal>
+
     <main class="historico">
         <section class="classe_historico">
             <article class="menu_lateral">
                 <nav>
                     <ul>
+                        <li class="ativo"><a href="viagem_andamento.html">Acompanhar viagem</a></li>
                         <li><a href="index.html#aluguel">Alugar agora</a></li>
-                        <li class="ativo"><a href="#">Viagem em andamento</a></li>
-                        <li><a href="./historico.html">As suas viagens</a></li>
-                        <li><a href="./perfil.html">Definições do perfil</a></li>
+                        <li><a href="./historico.html">Minhas viagens</a></li>
+                        <li><a href="./perfil.html">Minhas informações</a></li>
                     </ul>
                 </nav>
             </article>
-            <article class="opcao_alugar">
-                <h3>Consiga um carro em poucos minutos</h3>
-                <p>Reserve um carro a partir de um browser. Não é necessário instalar a aplicação.</p>
-                <button>Alugar um carro</button>
-            </article>
-            <article class="lista_historico">
-                <div>
-                    <div>
-                        <h3>As suas viagens</h3>
-                        <div class="botoes_meses">
-                            <button class="btn_select">Todas as viagens</button>
-                            <button>novembro</button>
-                            <button>outubro</button>
-                        </div>
+            
+            <section id="viagem" class="container">
+
+                <div class="mapa">
+                    <h1 class="line_after">Viagem em andamento</h1>
+                    <div class="wrap_img">
+                        <img src="img/mapa2.png">
                     </div>
-                    <div>
-                        <h4>Viagens anteriores</h4>
-                        <div class="todos_blocos">
 
-                            <div class="bloco_historico">
-                                <div class="conteudo_bloco">
-                                    <div class="header_bloco">
-                                        <p>Carro X</p>
-                                        <p>novembro 1 2022, 16:06</p>
-                                    </div>
-                                    <h5>Rua Major Paladino, 55 - Vila Leopoldina - São Paulo - SP, 05307-000</h5>
-                                    <div class="bloco_baixo">
-                                        <div class="principal_bloco">
-                                            <div class="origem_bloco">
-                                                <div class="fig_cima">
-                                                    <img src="" alt="">
-                                                </div>
-                                                <p>Avenida das Nações Unidas & Rua Tenente João Salustiano Lira - Vila
-                                                    Leopoldina - São Paulo - SP, 05307</p>
-                                            </div>
-                                            <div class="destino_bloco">
-                                                <div class="fig_baixo">
-                                                    <img src="" alt="">
-                                                </div>
-                                                <p>Rua Major Paladino, 55 - Vila Leopoldina - São Paulo - SP, 05307-000
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="footer_bloco">
-                                            <button>Ajuda</button>
-                                            <button>Ver detalhes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bloco_historico">
-                                <div class="conteudo_bloco">
-                                    <div class="header_bloco">
-                                        <p>Carro X</p>
-                                        <p>novembro 1 2022, 16:06</p>
-                                    </div>
-                                    <h5>Rua Major Paladino, 55 - Vila Leopoldina - São Paulo - SP, 05307-000</h5>
-                                    <div class="bloco_baixo">
-                                        <div class="principal_bloco">
-                                            <div class="origem_bloco">
-                                                <div class="fig_cima">
-                                                    <img src="" alt="">
-                                                </div>
-                                                <p>Avenida das Nações Unidas & Rua Tenente João Salustiano Lira - Vila
-                                                    Leopoldina - São Paulo - SP, 05307</p>
-                                            </div>
-                                            <div class="destino_bloco">
-                                                <div class="fig_baixo">
-                                                    <img src="" alt="">
-                                                </div>
-                                                <p>Rua Major Paladino, 55 - Vila Leopoldina - São Paulo - SP, 05307-000
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="footer_bloco">
-                                            <button>Ajuda</button>
-                                            <button>Ver detalhes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-                        </div>
+                    <div class="endereco">
+                        <img src="img/icons/location.svg">
+                        <p><strong>Endereço atual:</strong> Av. Paulista, 213  </p>
                     </div>
                 </div>
-            </article>
+
+                <div class="wrap detalhes_viagem">
+                    <h3>Viagem Prevista</h3>
+
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <strong>Endereço de origem: </strong>
+                            </div>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content origem">
+                                Av. Paulista, 1106  - Bela Vista
+                            </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="timeline-info">
+                                <strong>Destino selecionado: </strong>
+                            </div>
+                            <div class="timeline-marker destino_marker"></div>
+                            <div class="timeline-content destino">
+                                Av. Brg. Faria Lima, 2293 - Itaim Bibi
+                            </div>
+                        </li>
+                    </ul>
+
+                    <p class="center itens_previsto">
+                        <strong>Distância:</strong> 6,7km <br>
+                        <strong>Tempo previsto:</strong> 14min <br>
+                        <strong>Valor previsto*:</strong> R$15,00 <br>
+                    </p>
+
+                    <small class="center">*O valor pode mudar caso o caminho não seja o previsto e o cliente passe mais tempo que o esperado no carro</small>
+
+                    <button id="finalizar" class="btn btn_white open-modal">FINALIZAR CORRIDA</button>
+                </div>
+
+            </section>
         </section>
     </main>
-
 
     <footer style="background-color: #5465FF;">
         <div class="row">
             <h2>Fale conosco:</h2>
             <ul class="social_media">
                 <li><a href="#"><img src="img/icons/icon_fb.svg"></a></li>
-                <li><a href="https://www.youtube.com/channel/UC4sgDWUic84nLQgW5AKZtiw" target="_blank"><img
-                            src="img/icons/icon_yt.svg"></a></li>
+                <li><a href="https://www.youtube.com/channel/UC4sgDWUic84nLQgW5AKZtiw" target="_blank"><img src="img/icons/icon_yt.svg"></a></li>
                 <li><a href="#"><img src="img/icons/icon_linkedin.svg"></a></li>
             </ul>
         </div>
@@ -165,7 +335,7 @@
         <p>DevZilla | Todos os direitos reservados<sup>©</sup></p>
         <a href="mailto:devzillacompany@gmail.com">devzillacompany@gmail.com</a>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/script_viagem.js"></script>
 </body>
 
 </html>

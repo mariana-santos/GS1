@@ -34,18 +34,21 @@ closeModalButton.forEach((el) => {
 });
 
 openModalButton.forEach((el)=> {
-
     el.addEventListener("click", () => {
-        const origem = document.querySelector('#end_origem').value;
-        const erro = document.querySelector('.erro_origem');
-        if (origem !== '') {
-            document.querySelectorAll('.origem').forEach((el)=> el.innerHTML = origem)
-            toggleModal();
-            erro.style.display = "none";
-        }
-        else erro.style.display = "inline-block"
+        if (window.location.href.indexOf('index.html') > -1){
+            const origem = document.querySelector('#end_origem').value;
+            const erro = document.querySelector('.erro_origem');
+            if (window.location.href.indexOf('index.html') > -1 && origem !== '') {
+                document.querySelectorAll('.origem').forEach((el)=> el.innerHTML = origem)
+                toggleModal();
+                erro.style.display = "none";
+            }
+            else erro.style.display = "inline-block"
+        } 
+
+        else toggleModal();
+        
     });
-     
 })
 
 const etapa1 = document.getElementById('confirmar_carro');

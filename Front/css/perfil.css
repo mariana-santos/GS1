@@ -44,7 +44,6 @@
 }
 .perfil_usuario form input, .perfil_usuario form select{
     width: 80%;
-    height: 4vh;
     background-color: #3B3D45;
     border: 2px solid #EEEEEE;
     border-radius: 8px;
@@ -82,6 +81,7 @@
     background-color: #EEEEEE;
     border: none;
     border-radius: 8px;
+    cursor: pointer;
 }
 .btn_salvar{
     color: #00a015;

@@ -4,14 +4,33 @@ header{
     position: fixed;
     width: 100vw;
     box-sizing: border-box;
-    background: rgba(59, 61, 69, 0.8);
-    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.25);
+    background: #282c5558;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.153);
     z-index: 99999;
     transition: 0.2s;
     display: flex;
     justify-content: space-between;
     padding: 2em 4em;
     align-items: center;
+}
+
+header.azul{
+    background: #282C55;
+    padding: 1em 4em;
+}
+
+header.azul .bemvindo_h3{
+    display: none;
+}
+
+header.azul .logo{
+    background: linear-gradient(90deg, #FFFA01 -9.09%, #FFC819 109.44%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 700;
+    margin: 0;
 }
 
 nav ul{
@@ -32,9 +51,10 @@ header section{
     text-align: end;
 }
 
-header section a{
-    color: #5465FF;
+header section a{  
+    color: #FFC819 !important;
     text-decoration: none;
+    text-transform: lowercase;
 }
 
 header section h3{
@@ -44,6 +64,16 @@ header section h3{
 
 .logo{
     color: #5465FF;
+    display: flex;
+    align-items: center;
+    letter-spacing: .3em;
+    font-size: 2.7em;
+    font-family: 'Audiowide';
+}
+
+.logo img{
+    height: 1.5em;
+    margin-right: .3em;
 }
 
 .row{
@@ -67,7 +97,7 @@ header ul li a, footer ul li a{
     position: relative;
 }
 
-ul li a:not(.active):hover{ font-weight: 600; }
+ul li a:not(.menu_active):hover{ font-weight: 600; }
 
 /* esse item é o "risquinho" que fica depois do link quando passa o mouse em cima */
 header ul li a::before{
@@ -86,12 +116,11 @@ header ul li a::before{
 
 footer ul li a::before{ background: #fff; }
 
-ul li a:hover::before, ul li a.active::before{
+ul li a:hover::before, ul li a.menu_active::before{
     transform: scaleX(1);
 }
 
-a.active{
-    background: #5465FF;
+a.menu_active{
     font-weight: 800;
 }
 
@@ -156,7 +185,7 @@ header .btn{
 }
 
 footer{
-    background: #3B3D45;
+    background: #282C55 !important;
     color: #fff !important;
     text-align: center;
 }

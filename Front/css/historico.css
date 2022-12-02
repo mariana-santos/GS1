@@ -52,7 +52,7 @@
     margin-bottom: 16px;
     padding: 1em 0;
 }
-.opcao_alugar > button{
+.opcao_alugar button{
     border-style: none;
     transition-property: background;
     transition-duration: 200ms;
@@ -66,7 +66,7 @@
     color: rgb(255, 255, 255);
     background-color: #5465FF;
 }
-.opcao_alugar > button:hover{
+.opcao_alugar button:hover{
     background-color: #5465ff98;
 }
 .lista_historico{

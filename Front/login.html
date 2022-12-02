@@ -13,8 +13,8 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="logo">DEVZILLA</h1>
+    <header class="azul">
+        <h1 class="logo">S <img src="img/icons/LOGO.png"> LAR</h1>
 
         <nav class="row btns_menu">
 
@@ -36,7 +36,7 @@
 
             <ul>
                 <li><a href="index.html">início</a></li>
-                <li><a href="#">alugar</a></li>
+                <li><a href="index.html#aluguel">alugar</a></li>
                 <li><a href="index.html#sobre">sobre</a></li>
                 <li><a href="index.html#contato">contato</a></li>
                 <li><a href="historico.html">minhas viagens</a></li>
@@ -53,27 +53,27 @@
         <section class="container container_form">
             <div class="wrap_form">
                 <img class="img_login" src="./img/background_login.svg">
-                <form method="POST" onsubmit="validacaoFormulario();return false">
+                <form method="POST">
                     <h2>Bem vindo de volta!</h2>
                     <small>Para continuar, por favor insira seus dados.</small>
 
                     <img src="./img/login_img.svg">
-
-                    <p style="color: red; margin-top: 2vh; font-weight: 600;" id="mensagemErro"></p>
 
                     <label for="email">Email</label>
                     <div class="wrap_input">
                         <img src="./img/icons/icon_envelope.svg">
                         <input type="email" placeholder="Digite seu email" id="email">
                     </div>
+                    <span class="erro erro_email">Você precisa digitar um email válido!</span>
 
                     <label for="email">Senha</label>
                     <div class="wrap_input">
-                        <img src="./img/icons/icon_lock.svg"">
+                        <img src="./img/icons/icon_lock.svg">
                         <input type="password" placeholder="Digite sua senha" id="senha">
                     </div>
+                    <span class="erro erro_senha">Você precisa digitar uma senha válida!</span>
 
-                    <button type="submit" style="cursor: pointer;" class="btn btn_primary arrow">Entrar</button>
+                    <button onclick="validacaoFormulario(event)" style="cursor: pointer;" class="btn btn_purple arrow">Entrar</button>
 
                     <a class="outros_links" href="#">Esqueceu a senha? <strong>clique aqui</strong></a>
                     <a class="outros_links" href="cadastro.html">Ainda não possui conta? <strong>clique aqui</strong></a>
@@ -98,24 +98,30 @@
         <p>DevZilla | Todos os direitos reservados<sup>©</sup></p>
         <a href="mailto:devzillacompany@gmail.com">devzillacompany@gmail.com</a>
     </footer>
+    <!-- <script src="js/script.js"></script> -->
     <script>
-        document.querySelector(".bemvindo_h3").style.display = "none";
-        document.querySelector("header").style.padding = "0 4em";
-        document.querySelector(".logo").style.margin = "0";
 
         email = document.getElementById("email")
+        email_erro = document.querySelector(".erro_email")
         senha = document.getElementById("senha")
+        senha_erro = document.querySelector(".erro_senha")
 
-        function validacaoFormulario () {
-            if (email.value.length == 0){
-                mensagemErro.innerHTML = "Campo e-mail é obrigatório."
-                email.focus()
-            } else if (senha.value.length == 0){
-                mensagemErro.innerHTML = "Campo senha é obrigatório."
-                senha.focus()
-            } else{
-                alert("Usuário logado com sucesso!")
-            }
+        function validacaoFormulario (e) {
+            if (estaVazio(email, email_erro))
+                e.preventDefault();
+            else if(estaVazio(senha, senha_erro))
+                e.preventDefault();
+            else alert("Usuário logado com sucesso!")
+        }
+
+        function estaVazio(item, erro){
+            if(item.value.length == 0) {
+                erro.style.display = "inline-block"
+                return true 
+             } else { 
+                erro.style.display = "none"
+                return false
+             }
         }
     </script>
 </body>

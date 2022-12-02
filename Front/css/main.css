@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Manrope:300,400,500i,600,700,900,900i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Kanit:300,400,500i,600,700,800,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap');
 
 body{
     background: #3B3D45;
@@ -405,5 +406,9 @@ label{
 
     footer h2{
         margin-bottom: 0;
+    }
+
+    .logo {
+        font-size: 50px;
     }
 }

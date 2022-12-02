@@ -9,12 +9,13 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/historico.css">
     <link rel="stylesheet" type="text/css" href="css/perfil.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/login_cadastro.css"> -->
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <h1 class="logo">DEVZILLA</h1>
+        <h1 class="logo">S <img src="img/icons/LOGO.png">LAR</h1>
 
         <nav class="row btns_menu">
 
@@ -39,7 +40,7 @@
                 <li><a href="#">alugar</a></li>
                 <li><a href="index.html#sobre">sobre</a></li>
                 <li><a href="index.html#contato">contato</a></li>
-                <li><a href="historico.html">minhas viagens</a></li>
+                <li><a href="historico.html" class="menu_active">minhas viagens</a></li>
             </ul>
         </nav>
 
@@ -71,43 +72,70 @@
                     <div class="header_perfil">
                         <img src="./img/img_perfil.svg" alt="">
                         <div>
-                            <h4>Nome completo</h4>
+                            <h4>Alexander Gobbato</h4>
                             <p>+55 11 91223-1234</p>
                         </div>
                     </div>
                     <form method="POST">
-                        <div>
-                            <label for="">Localização</label>
-                            <select name="" id="">
-                                <option value="Brasil">Brasil</option>
-                            </select>
+                        <label for="nome">Nome</label>
+                        <div class="wrap_input input">
+                            <!-- <img src="./img/icons/icon_profile_black.svg"> -->
+                            <input type="text" placeholder="Digite seu nome" value="Alexander Gobbato" id="nome">
                         </div>
-                        <div>
-                            <label for="">Email</label>
-                            <input type="email" placeholder="email@gmail.com">
+                        <span class="erro erro_nome">Você precisa digitar um nome válido!</span>
+
+                        <label for="email">Email</label>
+                        <div class="wrap_input input">
+                            <!-- <img src="./img/icons/icon_envelope.svg"> -->
+                            <input type="email" value="gobbato@gmail.com" id="email">
                         </div>
-                        <div>
-                            <label for="">Data de Nascimento</label>
-                            <input type="date">
+                        <span class="erro erro_email">Você precisa digitar um email válido!</span>
+
+                        <label for="dtNasc">Data de Nascimento</label>
+                        <div class="wrap_input input">
+                            <!-- <img src="./img/icons/icon_calendar.svg"> -->
+                            <input type="date" value="1999-12-10" id="dtNasc">
                         </div>
+                        <span class="erro erro_dtNasc">Você precisa escolher uma data de nascimento!</span>
+
+                        <label for="regisCNH">Registro CNH</label>
+                        <div class="wrap_input input">
+                            <!-- <img src="./img/icons/icon_driverliscence.svg"> -->
+                            <input type="text" value="0100111" id="regisCNH">
+                        </div>
+                        <span class="erro erro_regisCNH">Você precisa digitar um resgistro de CNH válido!</span>
+
+                        <label for="validCNH">Validade CNH</label>
+                        <div class="wrap_input">
+                            <!-- <img src="./img/icons/icon_calendar.svg"> -->
+                            <input type="date" value="2024-02-02" id="validCNH">
+                        </div>
+                        <span class="erro erro_validCNH">Você precisa digitar uma data válida!</span>
+
+                        <label for="uploadCNH">Upload CNH</label>
+                        <div class="wrap_input">
+                            <!-- <img src="./img/icons/icon_envelope.svg"> -->
+                            <input type="file" placeholder="01/01/2024" id="uploadCNH">
+                        </div>
+                        <span class="erro erro_uploadCNH">Você precisa upar um arquivo válido!</span>
+                        
+                        <label for="senha">Senha</label>
+                        <div class="wrap_input">
+                            <!-- <img src="./img/icons/icon_lock.svg"> -->
+                            <input type="password" value="AAA123" id="senha">
+                        </div>
+                        <span class="erro erro_senha">Você precisa digitar uma senha válida!</span>
+                        
+                        <label for="Confirmsenha">Confirme a senha</label>
+                        <div class="wrap_input">
+                            <!-- <img src="./img/icons/icon_lock.svg"> -->
+                            <input type="password" value="AAA123" id="Confirmsenha">
+                        </div>
+                        <span class="erro erro_Confirmsenha">Senhas não correspondem!</span>
                     </form>
-                    <div class="infos_CNH">
-                        <h4>CNH</h4>
-                        <div>
-                            <h5>Número de Registro</h5>
-                            <p>00110010</p>
-                        </div>
-                        <div>
-                            <h5>Validade</h5>
-                            <p>01/01/2024</p>
-                        </div>
-                        <div>
-                            <h5>Categoria</h5>
-                            <p>A e B</p>
-                        </div>
-                    </div>
+
                     <div class="botoes_perfil">
-                        <button class="btn_salvar disabled" disabled>Guardar alterações</button>
+                        <button class="btn_salvar" onclick="validacaoFormulario(event)">Guardar alterações</button>
                         <button class="btn_encerrar">Encerrar sessão</button>
                     </div>
                 </div>
@@ -130,6 +158,7 @@
         <p>DevZilla | Todos os direitos reservados<sup>©</sup></p>
         <a href="mailto:devzillacompany@gmail.com">devzillacompany@gmail.com</a>
     </footer>
+    <script src="./js/script_validacao.js"></script>
     <script src="./js/script.js"></script>
 </body>
 

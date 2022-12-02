@@ -111,17 +111,18 @@ label{
     color: #5465FF;
     text-decoration: none;
 }
+
 .btn{
-    border-radius: 5px;
+    /* border-radius: 5px; */
     text-transform: uppercase;
-    padding: 10px 25px;
+    /* padding: 10px 25px; */
     display: flex;
-    width: fit-content;
+    /* width: fit-content; */
     gap: 15px;
     align-items: center;
     margin-top: 25px;
     border: none;
-    font-weight: 300;
+    font-weight: 500;
     width: 100%;
 }
 
@@ -151,7 +152,7 @@ input, textarea {
     .wrap_form .img_login{
         display: none;
     }
-    .wrap_form img{
+    .wrap_form .bg{
         display: none;
     }
     .wrap_form{

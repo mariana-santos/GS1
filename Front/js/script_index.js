@@ -17,19 +17,15 @@ closeModalButton.forEach((el) => {
 
 openModalButton.forEach((el)=> {
     el.addEventListener("click", () => {
-        if (window.location.href.indexOf('index.html') > -1){
             const origem = document.querySelector('#end_origem').value;
             const erro = document.querySelector('.erro_origem');
-            if (window.location.href.indexOf('index.html') > -1 && origem !== '') {
+            console.log(origem)
+            if (origem !== '') {
                 document.querySelectorAll('.origem').forEach((el)=> el.innerHTML = origem)
                 toggleModal();
                 erro.style.display = "none";
             }
             else erro.style.display = "inline-block"
-        } 
-
-        else toggleModal();
-        
     });
 })
 
@@ -58,7 +54,7 @@ destino.addEventListener('keyup', ()=> {
 
 document.querySelector('#etapa3').addEventListener('click', ()=>{
         const erro = document.querySelector('.erro_destino');
-        if (destino !== '') {
+        if (destino.value !== '') {
             erro.style.display = "none";
             mudarTela(etapa2, 3, etapa3, 'avancar')
         }
@@ -94,8 +90,6 @@ for(const radioButton of radioButtons){
 
 document.querySelector('#etapa4').addEventListener('click', ()=>{
 
-    let valido = true
-
     for(var i = 0; i < radioButtons.length; i++) {
         if(radioButtons[i].checked) selectedValue = radioButtons[i].value;   
     }
@@ -110,19 +104,51 @@ document.querySelector('#etapa4').addEventListener('click', ()=>{
         const cvv = document.querySelector('#cvv_cartao').value;
         const erro_cvv = document.querySelector('.erro_cvv_cartao');
 
-        function validar(valor, erro){
-            if(valor == ''){
-                valido = false
+        function validaNumero(number, erro){
+            if(isNaN(number) || number.length <= 2 || number < 0){
                 erro.style.display = "inline-block"
+                return false;
+            }else{
+                erro.style.display = "none" 
+                return true;           
             }
         }
 
-        validar(nro_cartao, erro_nro)
-        validar(cvv, erro_cvv)
-        validar(validade, erro_val)
+        function validarData (data, erro) {
+            data_formatada = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+            var data_array = data_formatada.split("-"); // quebra a data em array
+            
+            // para o IE onde será inserido no formato dd/MM/yyyy
+            if(data_array[0].length != 4){
+                data_formatada = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+            }
+
+            var hoje = new Date() 
+            var val  = new Date(data_formatada);
+            val.setDate(val.getDate() + 1);
+
+            if(data.length == 0){
+                erro.style.display = "inline-block"
+                erro.textContent = 'Você precisa digitar uma data válida!'
+                return false;
+            } else if(val <= hoje){
+                erro.style.display = "inline-block"
+                erro.textContent = 'Seu cartão está vencido!'
+                return false;
+            }
+            else {
+                erro.style.display = "none"
+                return true;
+            }
+        }
+
+        if (validaNumero(nro_cartao, erro_nro) &&
+            validaNumero(cvv, erro_cvv) &&
+            validarData(validade, erro_val)) {
+                mudarTela(etapa3, 4, etapa4, 'avancar')
+        }
     }
 
-    if (valido) mudarTela(etapa3, 4, etapa4, 'avancar')
 })
 
 document.querySelector('#etapa5').addEventListener('click', ()=> {
@@ -131,4 +157,40 @@ document.querySelector('#etapa5').addEventListener('click', ()=> {
 
     document.getElementById('andamento').style.display = "none";
     document.getElementById('title').style.display = "none";
+})
+
+document.querySelector('#enviar_msg').addEventListener('click', ()=>{
+
+    const nome = document.querySelector('#nome').value;
+    const erro_nome = document.querySelector('.erro_nome');
+
+    const email = document.querySelector('#email').value;
+    const erro_email = document.querySelector('.erro_email');
+
+    const mensagem = document.querySelector('#mensagem').value;
+    const erro_mensagem = document.querySelector('.erro_mensagem');
+
+    function valida(item, erro){
+        if(item.length <= 2){
+            erro.style.display = "inline-block"
+            return false;
+        }else{
+            erro.style.display = "none" 
+            return true;           
+        }
+    }
+
+    if (valida(nome, erro_nome)&&
+        valida(email, erro_email) &&
+        valida(mensagem, erro_mensagem)) {
+            alert('Mensagem enviada com sucesso!')
+            erro_email.style.display = "none";
+            erro_mensagem.style.display = "none";
+            erro_nome.style.display = "none";
+
+            nome.value = "";
+            email.value = "";
+            mensagem.value = "";
+    }
+
 })

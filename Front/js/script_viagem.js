@@ -64,21 +64,50 @@ document.querySelector('#pgto_realizado').addEventListener('click', ()=>{
         const cvv = document.querySelector('#cvv_cartao').value;
         const erro_cvv = document.querySelector('.erro_cvv_cartao');
 
-        function validar(valor, erro){
-            if(valor == ''){
-                valido = false
+        function validaNumero(number, erro){
+            if(isNaN(number) || number.length <= 2 || number < 0){
                 erro.style.display = "inline-block"
+                return false;
+            }else{
+                erro.style.display = "none" 
+                return true;           
             }
         }
 
-        validar(nro_cartao, erro_nro)
-        validar(cvv, erro_cvv)
-        validar(validade, erro_val)
-    }
+        function validarData (data, erro) {
+            data_formatada = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+            var data_array = data_formatada.split("-"); // quebra a data em array
+            
+            // para o IE onde será inserido no formato dd/MM/yyyy
+            if(data_array[0].length != 4){
+                data_formatada = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+            }
 
-    if (valido) {
-        pagamento_final.style.display = "none";
-        corrida.style.display = "block"
+            var hoje = new Date() 
+            var val  = new Date(data_formatada);
+            val.setDate(val.getDate() + 1);
+
+            if(data.length == 0){
+                erro.style.display = "inline-block"
+                erro.textContent = 'Você precisa digitar uma data válida!'
+                return false;
+            } else if(val <= hoje){
+                erro.style.display = "inline-block"
+                erro.textContent = 'Seu cartão está vencido!'
+                return false;
+            }
+            else {
+                erro.style.display = "none"
+                return true;
+            }
+        }
+
+        if (validaNumero(nro_cartao, erro_nro) &&
+            validaNumero(cvv, erro_cvv) &&
+            validarData(validade, erro_val)) {
+                pagamento_final.style.display = "none";
+                corrida.style.display = "block"
+        }
     }
 })
 

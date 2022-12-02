@@ -11,12 +11,22 @@ let itens = ['nome', 'email', 'dtNasc', 'regisCNH', 'validCNH', 'uploadCNH', 'se
 
                 if ((estaVazio(item, erro)) || (input == 'dtNasc' && validarIdade(item, erro)) 
                 || (input == 'validCNH' && validarCNH(item, erro)) || (input == 'senha' && validarSenha(item, erro))) {
-                    e.preventDefault();
                     valido = false
                 }
             })
-            // e.preventDefault()
-            if(valido) alert('Usuário cadastrado com sucesso!')
+
+            if(valido) {
+                if(window.location.href.indexOf('cadastro') > -1){
+                    itens.forEach((input) => {
+                        document.getElementById(input).value = ""
+                    })
+                    alert('Usuário cadastrado com sucesso!');
+                }else{
+                    alert('Usuário alterado com sucesso!')
+                }
+                
+                
+            }
             
         }
 
@@ -83,12 +93,11 @@ let itens = ['nome', 'email', 'dtNasc', 'regisCNH', 'validCNH', 'uploadCNH', 'se
             var letrasMaiusculas = /[A-Z]/;
             var letrasMinusculas = /[a-z]/; 
             var numeros = /[0-9]/;
-            var caracteresEspeciais = /[!|@|#|$|%|^|&|*|(|)|-|_]/;
 
-            confirmSenha = document.querySelector('#cofirmSenha').value
-            erro_confirm = document.querySelector('.erro_cofirmSenha')
+            confirmSenha = document.querySelector('#Confirmsenha').value
+            erro_confirm = document.querySelector('.erro_Confirmsenha')
 
-            if (!letrasMaiusculas.test(senhaDigitada.value) || !letrasMinusculas.test(senhaDigitada.value) || !numeros.test(senhaDigitada.value) || !caracteresEspeciais.test(senhaDigitada.value || senhaDigitada.value.length < 8)){
+            if (!letrasMaiusculas.test(senhaDigitada.value) || !letrasMinusculas.test(senhaDigitada.value) || !numeros.test(senhaDigitada.value) || (senhaDigitada.value.length < 5)){
                 erro.style.display = "inline-block"
                 return true
             } else if(senhaDigitada.value !== confirmSenha){

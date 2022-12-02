@@ -154,6 +154,7 @@
                                     </div>
                                     <div class="timeline-marker destino_marker"></div>
                                     <div class="timeline-content destino">
+                                        Av. Brg. Faria Lima, 2293 - Itaim Bibi
                                     </div>
                                 </li>
                             </ul>
@@ -231,7 +232,7 @@
                             <div class="wrap_cartao">
                                 <div class="input">
                                     <label for="nro_cartao">Numero do Cartão:</label>
-                                    <input type="text" placeholder="Digite o número do seu cartão" id="nro_cartao">
+                                    <input type="number" min="0" placeholder="Digite o número do seu cartão" id="nro_cartao">
                                     <span class="erro erro_nro_cartao">Seu número de cartão precisa ser válido!</span>
                                 </div>
                                 
@@ -240,7 +241,7 @@
                                     <div class="input">
                                         <label for="validade_cartao">Data de Validade:</label>
                                         <input type="date" placeholder="Digite a data de validade do cartão" id="validade_cartao">
-                                        <span class="erro erro_val_cartao">Sua data da CNH precisa ser válida!</span>
+                                        <span class="erro erro_val_cartao">A validade do cartão precisa ser válida!</span>
                                     </div>
 
                                     <div class="input">
@@ -363,16 +364,26 @@
                 <form>
                     <h1 class="line_after">FICOU COM ALGUMA DÚVIDA? FALE CONOSCO:</h1>
 
-                    <label for="nome">Nome:</label>
-                    <input type="text" placeholder="Digite seu nome" id="nome">
+                    <div class="input">
+                        <label for="nome">Nome:</label>
+                        <input type="text" placeholder="Digite seu nome" id="nome">
+                        <span class="erro erro_nome">Você precisa digitar um nome válido!</span>
+                    </div>
 
-                    <label for="nome">Email:</label>
-                    <input type="text" placeholder="Digite seu email" id="email">
+                    <div class="input">
+                        <label for="email">Email:</label>
+                        <input type="text" placeholder="Digite seu email" id="email">
+                        <span class="erro erro_email">Você precisa digitar um email válido!</span>
+                    </div>
 
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" placeholder="Digite sua mensagem" rows="5"></textarea>
+                    <div class="input">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" placeholder="Digite sua mensagem" rows="5"></textarea>
+                        <span class="erro erro_mensagem">Você precisa digitar uma mensagem!</span>
+                    </div>
+                    </label>
 
-                    <a href="#" class="btn btn_black">ENVIAR MENSAGEM</a>
+                    <a class="btn btn_black" id="enviar_msg">ENVIAR MENSAGEM</a>
                 </form>
             </section>
         </main>

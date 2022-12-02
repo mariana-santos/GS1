@@ -53,11 +53,13 @@
         <section class="container container_form">
             <div class="wrap_form">
                 <img class="img_login" src="./img/background_login.svg">
-                <form>
+                <form method="POST" onsubmit="validacaoFormulario();return false">
                     <h2>Bem vindo de volta!</h2>
                     <small>Para continuar, por favor insira seus dados.</small>
 
                     <img src="./img/login_img.svg">
+
+                    <p style="color: red; margin-top: 2vh; font-weight: 600;" id="mensagemErro"></p>
 
                     <label for="email">Email</label>
                     <div class="wrap_input">
@@ -71,7 +73,7 @@
                         <input type="password" placeholder="Digite sua senha" id="senha">
                     </div>
 
-                    <a href="#" class="btn btn_primary arrow">Entrar</a>
+                    <button type="submit" style="cursor: pointer;" class="btn btn_primary arrow">Entrar</button>
 
                     <a class="outros_links" href="#">Esqueceu a senha? <strong>clique aqui</strong></a>
                     <a class="outros_links" href="cadastro.html">Ainda não possui conta? <strong>clique aqui</strong></a>
@@ -100,6 +102,21 @@
         document.querySelector(".bemvindo_h3").style.display = "none";
         document.querySelector("header").style.padding = "0 4em";
         document.querySelector(".logo").style.margin = "0";
+
+        email = document.getElementById("email")
+        senha = document.getElementById("senha")
+
+        function validacaoFormulario () {
+            if (email.value.length == 0){
+                mensagemErro.innerHTML = "Campo e-mail é obrigatório."
+                email.focus()
+            } else if (senha.value.length == 0){
+                mensagemErro.innerHTML = "Campo senha é obrigatório."
+                senha.focus()
+            } else{
+                alert("Usuário logado com sucesso!")
+            }
+        }
     </script>
 </body>
 

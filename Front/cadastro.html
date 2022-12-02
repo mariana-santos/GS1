@@ -53,11 +53,13 @@
         <section class="container container_form">
             <div class="wrap_form">
                 <img src="./img/background_login.svg">
-                <form>
+                <form method="POST" onsubmit="validacaoFormulario();return false">
                     <h2>Seja bem vindo!</h2>
                     <small>Para continuar, por favor insira seus dados.</small>
 
                     <img src="./img/cadastro_img.svg">
+
+                    <p style="color: red; margin-top: 2vh; font-weight: 600;" id="mensagemErro"></p>
 
                     <label for="nome">Nome</label>
                     <div class="wrap_input">
@@ -107,7 +109,7 @@
                         <input type="password" placeholder="Confirme sua senha" id="Confirmsenha">
                     </div>
 
-                    <a href="#" class="btn btn_primary arrow">Entrar</a>
+                    <button type="submit" style="cursor: pointer;" class="btn btn_primary arrow">Entrar</button>
 
                     <a class="outros_links" href="#">Esqueceu a senha? <strong>clique aqui</strong></a>
                     <a class="outros_links" href="login.html">Já possui conta? <strong>clique aqui</strong></a>
@@ -136,6 +138,117 @@
         document.querySelector(".bemvindo_h3").style.display = "none";
         document.querySelector("header").style.padding = "0 4em";
         document.querySelector(".logo").style.margin = "0";
+
+        nome = document.getElementById("nome")
+        email = document.getElementById("email")
+        dtNasc = document.getElementById("dtNasc")
+        regisCNH = document.getElementById("regisCNH")
+        validCNH = document.getElementById("validCNH")
+        uploadCNH = document.getElementById("uploadCNH")
+        senha = document.getElementById("senha")
+        Confirmsenha = document.getElementById("Confirmsenha")
+
+        mensagemErro = document.getElementById("mensagemErro")
+        
+        function validacaoFormulario () {
+
+            if (nome.value.length == 0){
+                mensagemErro.innerHTML = "Campo nome é obrigatório."
+                nome.focus()
+            } else if (email.value.length == 0){
+                mensagemErro.innerHTML = "Campo e-mail é obrigatório."
+                email.focus()
+            } else if (dtNasc.value.length == 0){
+                mensagemErro.innerHTML = "Campo data de nascimento é obrigatório."
+                dtNasc.focus()
+            } else if (!validarIdade(dtNasc)){
+                dtNasc.focus()
+                mensagemErro.innerHTML = "Você precisa ter no mínimo 18 anos."
+            }
+            else if (regisCNH.value.length == 0){
+                 mensagemErro.innerHTML = "Campo registro CNH é obrigatório."
+                 regisCNH.focus()
+                } else if (validCNH.value.length == 0){
+                mensagemErro.innerHTML = "Campo validade CNH é obrigatório."
+                validCNH.focus()
+            } else if (!validarCNH(validCNH)){
+                validarCNH.focus()
+                mensagemErro.innerHTML = "A CNH está vencida, não é possível se cadastrar."
+            } else if (uploadCNH.value.length == 0){
+                mensagemErro.innerHTML = "Campo upload CNH é obrigatório."
+                uploadCNH.focus()
+            } else if (senha.value.length == 0){
+                mensagemErro.innerHTML = "Campo senha é obrigatório."
+                senha.focus()
+            } else if (!validarSenha(senha)){
+                mensagemErro.innerHTML = "A senha precisa conter: 1 número, 1 letra maiúcula, 1 letra minúscula, 1 caractere especial e no mínimo 8 dígitos."
+                senha.focus()
+            } else if (Confirmsenha.value.length == 0){
+                mensagemErro.innerHTML = "Campo confirmar senha é obrigatório."
+                Confirmsenha.focus()
+            } else if (senha.value != Confirmsenha.value){
+                mensagemErro.innerHTML = "As senha precisam ser iguais."
+                Confirmsenha.focus()
+            } else{
+                alert("Usuário cadastrado com sucesso!")
+            }
+        }
+
+        function validarIdade (data) {
+            data = data.value.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+            var data_array = data.split("-"); // quebra a data em array
+            
+            // para o IE onde será inserido no formato dd/MM/yyyy
+            if(data_array[0].length != 4){
+                data = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+            }
+            
+            // comparo as datas e calculo a idade
+            var hoje = new Date();
+            var nasc  = new Date(data);
+            var idade = hoje.getFullYear() - nasc.getFullYear();
+            var m = hoje.getMonth() - nasc.getMonth();
+            if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) idade--;
+            
+            if(idade < 18 || idade > 150){
+                return false;
+            }else {
+                return true;
+            }
+        }
+
+        function validarCNH (data) {
+            data = data.value.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+            var data_array = data.split("-"); // quebra a data em array
+            
+            // para o IE onde será inserido no formato dd/MM/yyyy
+            if(data_array[0].length != 4){
+                data = data_array[2]+"-"+data_array[1]+"-"+data_array[0]; // remonto a data no formato yyyy/MM/dd
+            }
+
+            var hoje = new Date() 
+            var val  = new Date(data);
+            val.setDate(val.getDate() + 1);
+
+            if (val <= hoje){
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        function validarSenha ( senhaDigitada ) {
+            var letrasMaiusculas = /[A-Z]/;
+            var letrasMinusculas = /[a-z]/; 
+            var numeros = /[0-9]/;
+            var caracteresEspeciais = /[!|@|#|$|%|^|&|*|(|)|-|_]/;
+
+            if (!letrasMaiusculas.test(senhaDigitada.value) || !letrasMinusculas.test(senhaDigitada.value) || !numeros.test(senhaDigitada.value) || !caracteresEspeciais.test(senhaDigitada.value || senhaDigitada.value.length < 8)){
+                return false;
+            } else {
+                return true;
+            }
+        }
     </script>
 </body>
 

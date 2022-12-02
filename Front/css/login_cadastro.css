@@ -61,7 +61,7 @@ input{
     border-style: none !important;
     width: 85%;
     box-sizing: border-box;
-    padding: 2px 0 !important;
+    padding: 2px 7px !important;
 }
  
 .wrap_input img{
@@ -133,6 +133,11 @@ label{
 
 .arrow::after{ background: url('../img/icons/icon_arrow_right.svg') center / contain; }
 
+
+input, textarea {
+    margin: 1em 0;
+}
+
 @media screen and (max-width: 1400px) {
     .wrap_form .img_login{
         display: none;
@@ -142,6 +147,10 @@ label{
     }
     .wrap_form{
         justify-content: center;
+    }
+    .wrap_form form {
+        width: 75%;
+        margin: 2rem;
     }
 }
 @media screen and (max-width: 1120px) {
@@ -153,8 +162,28 @@ label{
     .container_form{
         padding-top: 28vh;
     }
-    .wrap_form form {
-        width: 75%;
-        margin: 2rem;
+}
+@media screen and (max-width: 700px) {
+    h2{
+        font-size: 27px;
+    }
+    .btn{
+        font-size: 1em;
+    }
+    input, textarea {
+        margin: 0.5em 0;
+    }
+    .outros_links {
+        font-size: 0.8em;
+    }
+    .container_form {
+        padding-top: 24vh;
+    }
+    label {
+        margin-bottom: 0.2rem;
+        margin-top: 0.5rem;
+    }
+    .wrap_form{
+        width: 90%;
     }
 }

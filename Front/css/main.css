@@ -297,6 +297,23 @@ label{
     color: #282C55;
 }
 
+.nomes_footer{
+    font-size: 0.8em;
+    flex-wrap: wrap;
+    margin-top: 3vh;
+}
+
+.nomes_footer ul{
+    flex-wrap: wrap;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.nomes_footer ul li{
+    text-align: center;
+}
+
 @media screen and (max-width: 1300px) {
     #aluguel img{
         width: 100%;
